@@ -1,14 +1,14 @@
 # Ingest report
 
-Generated 2026-10-18T21:19:30.728Z by `npm run ingest`. Do not edit by hand.
+Generated 2026-10-19T19:16:57.764Z by `npm run ingest`. Do not edit by hand.
 
-**1010 suits · 3366 releases** (1996 standard) · 752 with JAN · 733 with Bandai item code · 884 with materials
+**1010 suits · 3368 releases** (1998 standard) · 756 with JAN · 733 with Bandai item code · 888 with materials
 
 ## Coverage by station
 
 | Station | Suits | Releases |
 |---|---|---|
-| UC 0079 · One Year War | 207 | 923 |
+| UC 0079 · One Year War | 207 | 925 |
 | UC 0083 · Operation Stardust | 24 | 107 |
 | UC 0087 · Gryps Conflict | 35 | 133 |
 | UC 0088 · First Neo Zeon War | 40 | 117 |
@@ -51,7 +51,7 @@ Generated 2026-10-18T21:19:30.728Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [Reborn-One Hundred](https://gundam.fandom.com/wiki/Reborn-One_Hundred) | 703703 | CC BY-SA 3.0 | 2 | 36 | 34 |
 | gundam-wiki | [Full Mechanics](https://gundam.fandom.com/wiki/Full_Mechanics) | 700563 | CC BY-SA 3.0 | 2 | 14 | 14 |
 | gundam-wiki | [Master Grade SD](https://gundam.fandom.com/wiki/Master_Grade_SD) | 704416 | CC BY-SA 3.0 | 2 | 12 | 12 |
-| gundam-wiki | [High Grade Universal Century](https://gundam.fandom.com/wiki/High_Grade_Universal_Century) | 705614 | CC BY-SA 3.0 | 19 | 209 | 198 |
+| gundam-wiki | [High Grade Universal Century](https://gundam.fandom.com/wiki/High_Grade_Universal_Century) | 705820 | CC BY-SA 3.0 | 19 | 209 | 198 |
 | gundam-wiki | [High Grade (1990)](https://gundam.fandom.com/wiki/High_Grade_(1990)) | 662877 | CC BY-SA 3.0 | 4 | 7 | 7 |
 | gundam-wiki | [High Grade-EX](https://gundam.fandom.com/wiki/High_Grade-EX) | 631547 | CC BY-SA 3.0 | 2 | 3 | 3 |
 | gundam-wiki | [High Grade After Colony](https://gundam.fandom.com/wiki/High_Grade_After_Colony) | 620084 | CC BY-SA 3.0 | 2 | 31 | 31 |
@@ -111,17 +111,17 @@ Generated 2026-10-18T21:19:30.728Z by `npm run ingest`. Do not edit by hand.
 | ja-wikipedia | [マスターグレード](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111191810 | CC BY-SA 4.0 | 11 | 275 | 0 |
 | ja-wikipedia | [リアルグレード](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780725 | CC BY-SA 4.0 | 10 | 202 | 0 |
 | ja-wikipedia | [パーフェクトグレード](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780932 | CC BY-SA 4.0 | 1 | 22 | 0 |
-| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1180 kit pages (934 with JAN) | 608 merged into list rows · 280 standalone · 22 ambiguous + 13 contested kept separate |
+| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1184 kit pages (938 with JAN) | 610 merged into list rows · 282 standalone · 22 ambiguous + 13 contested kept separate |
 | gundam-wiki | {{merch}} entries on the list pages above | per page | CC BY-SA 3.0 | — | 51 kit rows (46 with JAN) | 3 joined to table rows · 46 standalone · 0 ambiguous · 2 no suit |
 | gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1896 Gundam products | 733 matched |
 
-## JAN by source (767 releases)
+## JAN by source (771 releases)
 
 A release carries a JAN only when every source record that speaks about it states the same code and no other record uses that code for another kit.
 
 | Stated by | Releases |
 |---|---|
-| Gunpla Wiki kit page only | 723 |
+| Gunpla Wiki kit page only | 727 |
 | both, agreeing | 29 |
 | Gundam Wiki {{merch}} entry only | 15 |
 
@@ -129,7 +129,7 @@ Key-table records by source and status:
 
 | Source | attached | standalone | ambiguous | no-suit | no-date | disputed |
 |---|---|---|---|---|---|---|
-| gunpla-wiki | 562 | 190 | 0 | 91 | 68 | 23 |
+| gunpla-wiki | 564 | 192 | 0 | 91 | 68 | 23 |
 | gundam-wiki | 2 | 42 | 0 | 0 | 0 | 2 |
 
 ## Kit-page merges settled by stronger evidence (10)
