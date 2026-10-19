@@ -10,7 +10,7 @@ export function MetroList({ strands }: { strands: StrandVM[] }) {
         <p className="font-display text-5xl font-bold leading-none tracking-wide">GUNPLA</p>
         <p className="font-display text-4xl font-semibold leading-tight tracking-[0.2em] text-accent">UNIVERSE</p>
         <p className="mt-3 border-t border-rule pt-2 font-mono text-[11px] text-ink-3">
-          TIMELINE TRANSIT · SHEET 1 OF 3 · <span className="text-warn">MOCK DATA</span>
+          SHEET 1 OF 3 · MAP · tap a station for its kit grid
         </p>
       </header>
 

@@ -343,7 +343,7 @@ function TitleBlock({ opacity }: { opacity: number }) {
       </text>
       {[
         ["DWG", "TIMELINE TRANSIT", 0, 0],
-        ["SHEET", "1 OF 3", 1, 0],
+        ["SHEET", "1 OF 3 · MAP", 1, 0],
         ["SCOPE", "ALL TIMELINES", 0, 1],
         ["SCALE", "1 : 144", 1, 1],
       ].map(([k, v, col, row]) => (
@@ -357,10 +357,13 @@ function TitleBlock({ opacity }: { opacity: number }) {
         </g>
       ))}
       <text x={x + 12} y={y + 250} fontSize={12.5} fill="var(--ink-2)">
-        Select a highlighted station to open its suit × kit matrix
+        Click any station dot for sheet 2 (its kit grid)
       </text>
       <text x={x} y={y + 290} fontSize={12} fill="var(--ink-3)" className="font-mono">
-        {"● open    ○ coming soon    ▮ kits per suit (n = total)"}
+        {"Sheet 2: suits × grades  ·  Sheet 3: click a kit"}
+      </text>
+      <text x={x} y={y + 308} fontSize={12} fill="var(--ink-3)" className="font-mono">
+        {"▮ kits per suit (n = total)"}
       </text>
     </g>
   );

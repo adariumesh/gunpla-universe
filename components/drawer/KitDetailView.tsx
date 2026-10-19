@@ -31,6 +31,7 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
     <article className="pb-10">
       <header className="border-b border-rule px-5 pb-5 pt-5">
         <div className="flex items-center gap-2 pr-10">
+          <span className="rounded-sm border border-rule px-1 font-mono text-[10px] uppercase tracking-widest text-ink-3">Sheet 3 of 3</span>
           <GradeChip grade={mold.grade} />
           <span className="font-mono text-xs text-ink-3">
             {mold.scale}
@@ -163,7 +164,7 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
       </Section>
 
       <Section title="Where to buy" index="05">
-        <RetailerLinks name={sku.officialName ?? sku.name} itemCode={sku.bandaiItemCode} jan={sku.jan} />
+        <RetailerLinks jan={sku.jan} itemCode={sku.bandaiItemCode} grade={mold.grade} modelNumber={primarySuit.modelNumber} suitName={primarySuit.name} />
       </Section>
 
       <Section title="Sources & provenance" index="06">

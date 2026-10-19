@@ -65,6 +65,7 @@ export function EraView({ matrix }: { matrix: EraMatrix }) {
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0">
             <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color }}>
+              <span className="mr-2 rounded-sm border border-current px-1">Sheet 2 of 3 · kit grid</span>
               {matrix.timeline.short} {matrix.timeline.name} / {matrix.era.code}
             </p>
             <motion.h1
