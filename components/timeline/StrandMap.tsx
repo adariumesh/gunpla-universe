@@ -4,6 +4,7 @@ import { animate, useReducedMotion } from "motion/react";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { CC_RING, VIEWBOX, workLabelPos, type StationLayout, type StrandLayout } from "@/lib/layout/strands";
+import { withBase } from "@/lib/basePath";
 
 export type StationVM = Omit<StationLayout, "leftWorks"> & {
   code: string;
@@ -278,7 +279,7 @@ function Station({
 
   return (
     <a
-      href={`/era/${st.eraId}`}
+      href={withBase(`/era/${st.eraId}/`)}
       onClick={(e) => {
         if (e.metaKey || e.ctrlKey || e.shiftKey) return;
         e.preventDefault();

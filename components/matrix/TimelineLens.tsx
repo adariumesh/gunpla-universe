@@ -96,7 +96,7 @@ function Chip({ card, left, top }: { card: TileCard; left: number; top: number }
   return (
     <motion.div layoutId={`kit-${card.sku.id}`} className="absolute" style={{ left, top }}>
       <Link
-        href={`/kit/${card.sku.id}`}
+        href={{ query: { kit: card.sku.id } }}
         scroll={false}
         title={`${card.sku.name} (${card.year})`}
         className="flex items-center rounded-sm px-1 font-mono text-[10px] font-medium leading-none text-white shadow-sm ring-offset-1 ring-offset-paper hover:ring-2 hover:ring-accent"

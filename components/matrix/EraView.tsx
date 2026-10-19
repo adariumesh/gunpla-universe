@@ -2,7 +2,8 @@
 
 import { ChartGantt, LayoutGrid } from "lucide-react";
 import { LayoutGroup, motion } from "motion/react";
-import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { MockBadge } from "@/components/Glyph";
 import { TopControls } from "@/components/TopControls";
 import { GRADE_ROWS, GRADE_ROW_LABEL, type EraMatrix, type GradeRow } from "@/lib/repo";
@@ -12,16 +13,27 @@ import { defaultFilters, visibleBands, type Filters, type SortKey } from "./mode
 
 type Lens = "grid" | "timeline";
 
-export function EraView({ matrix, focus }: { matrix: EraMatrix; focus?: string }) {
+/** Reads ?focus= in the browser so the era page itself can be pre-rendered as static HTML. */
+function FocusReader({ onFocus }: { onFocus: (id: string) => void }) {
+  const focus = useSearchParams().get("focus");
+  useEffect(() => {
+    if (focus) onFocus(focus);
+  }, [focus, onFocus]);
+  return null;
+}
+
+export function EraView({ matrix }: { matrix: EraMatrix }) {
   const [lens, setLens] = useState<Lens>("grid");
   const [filters, setFilters] = useState<Filters>(defaultFilters);
   const [sort, setSort] = useState<SortKey>("canon");
-  const [expandedParents, setExpandedParents] = useState<Set<string>>(() => {
+  const [focus, setFocus] = useState<string>();
+  const [expandedParents, setExpandedParents] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    if (!focus) return;
     // Deep link to a collapsed variant opens its parent.
-    const all = matrix.factions.flatMap((f) => f.columns);
-    const target = all.find((c) => c.suit.id === focus);
-    return new Set(target?.suit.variantOf ? [target.suit.variantOf] : []);
-  });
+    const target = matrix.factions.flatMap((f) => f.columns).find((c) => c.suit.id === focus);
+    if (target?.suit.variantOf) setExpandedParents((s) => new Set([...s, target.suit.variantOf!]));
+  }, [focus, matrix]);
   const [spreadAll, setSpreadAll] = useState(false);
 
   const bands = useMemo(() => visibleBands(matrix, filters, sort, expandedParents), [matrix, filters, sort, expandedParents]);
@@ -46,6 +58,9 @@ export function EraView({ matrix, focus }: { matrix: EraMatrix; focus?: string }
 
   return (
     <main className="flex h-dvh flex-col md:h-dvh">
+      <Suspense fallback={null}>
+        <FocusReader onFocus={setFocus} />
+      </Suspense>
       <header className="shrink-0 border-b border-rule bg-paper px-4 pb-3 pt-4 md:px-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0">

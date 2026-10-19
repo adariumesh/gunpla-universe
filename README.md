@@ -23,6 +23,17 @@ npm run validate:data  # zod schema + referential integrity
 npm run build
 ```
 
+## Publishing (GitHub Pages)
+
+```bash
+npm run build:pages   # static site in out/, served under /gunpla-universe/
+```
+
+- `.github/workflows/deploy.yml` validates the data, runs the tests, builds the static site and deploys it to GitHub Pages on every push to `main`.
+- `.github/workflows/refresh.yml` re-runs `ingest --refresh` every Monday. It commits the new catalog only if the JAN audit and tests pass, and that commit triggers a deploy.
+- One-time setup: in the repo, go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+- The kit drawer opens via `?kit=<key>` on era pages and loads pre-rendered `/kit-data/<key>` JSON, so it works without a server. Full kit pages live at `/kit/<key>/`.
+
 ## Layout
 
 ```

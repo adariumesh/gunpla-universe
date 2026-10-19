@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 // Applies a saved theme before first paint so there is no flash.
 const themeScript = `try{var t=localStorage.getItem("gu-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
 
-export default function RootLayout({ children, drawer }: { children: React.ReactNode; drawer: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${plexSans.variable} ${plexMono.variable} ${barlow.variable}`}>
       <head>
@@ -32,7 +32,6 @@ export default function RootLayout({ children, drawer }: { children: React.React
       <body className="min-h-dvh">
         <Providers>
           {children}
-          {drawer}
           <CommandPalette />
         </Providers>
       </body>

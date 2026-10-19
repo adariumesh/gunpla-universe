@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { GradeChip, MockBadge } from "@/components/Glyph";
 import { ArtPlate } from "@/components/matrix/KitTile";
-import type { KitCard, KitDetail } from "@/lib/repo";
+import type { KitDetail, LineageCard } from "@/lib/repo";
 import { RetailerLinks } from "./RetailerLinks";
 
 const yen = (n: number | null) => (n === null ? "—" : `¥${n.toLocaleString("en-US")}`);
@@ -17,7 +17,8 @@ const SOURCE_LABEL: Record<string, string> = {
 };
 
 /** Kit detail: only facts a cited source states. Absent fields say so instead of guessing. */
-export function KitDetailView({ detail }: { detail: KitDetail }) {
+export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail; asDrawer?: boolean }) {
+  const kitHref = (id: string) => (asDrawer ? { query: { kit: id } } : `/kit/${id}/`);
   const { card, primarySuit } = detail;
   const { sku, mold } = card;
   const specs = mold.specs;
@@ -103,7 +104,7 @@ export function KitDetailView({ detail }: { detail: KitDetail }) {
             <ul className="space-y-1 text-sm">
               {detail.editions.map((ed) => (
                 <li key={ed.sku.id}>
-                  <Link href={`/kit/${ed.sku.id}`} replace scroll={false} className="hover:underline">
+                  <Link href={kitHref(ed.sku.id)} replace scroll={false} className="hover:underline">
                     {ed.sku.name}
                   </Link>{" "}
                   <span className="font-mono text-[11px] text-ink-3">
@@ -149,7 +150,15 @@ export function KitDetailView({ detail }: { detail: KitDetail }) {
       )}
 
       <Section title={`Every ${primarySuit.name} kit`} index="04">
-        <LineageStrip lineage={detail.lineage} current={card} compareId={compareId} onCompare={setCompareId} />
+        <LineageStrip lineage={detail.lineage} current={card} compareId={compareId} onCompare={setCompareId} kitHref={kitHref} />
+        {detail.lineageTotal > detail.lineage.length && (
+          <p className="mt-2 font-mono text-[10px] text-ink-3">
+            Showing {detail.lineage.length} of {detail.lineageTotal} kits nearest this release ·{" "}
+            <Link href={`/era/${primarySuit.debutEraId}?focus=${primarySuit.id}`} className="underline underline-offset-2">
+              see all in the era grid
+            </Link>
+          </p>
+        )}
         {compare && <CompareTable a={card} b={compare} onClose={() => setCompareId(null)} />}
       </Section>
 
@@ -222,11 +231,13 @@ function LineageStrip({
   current,
   compareId,
   onCompare,
+  kitHref,
 }: {
-  lineage: KitCard[];
-  current: KitCard;
+  lineage: LineageCard[];
+  current: LineageCard;
   compareId: string | null;
   onCompare: (id: string | null) => void;
+  kitHref: (id: string) => string | { query: { kit: string } };
 }) {
   const currentRef = useRef<HTMLLIElement>(null);
   useEffect(() => {
@@ -246,7 +257,7 @@ function LineageStrip({
             ref={isCurrent ? currentRef : undefined}
             className={`relative w-[120px] shrink-0 rounded-md border p-2 ${isCurrent ? "border-accent bg-paper-2" : comparing ? "border-ink" : "border-rule"}`}
           >
-            <Link href={`/kit/${c.sku.id}`} replace scroll={false} className="block" aria-current={isCurrent ? "true" : undefined}>
+            <Link href={kitHref(c.sku.id)} replace scroll={false} className="block" aria-current={isCurrent ? "true" : undefined}>
               <div className="flex items-center justify-between">
                 <GradeChip grade={c.mold.grade} />
                 <span className="font-mono text-[10px] text-ink-3">{c.year}</span>
@@ -273,9 +284,9 @@ function LineageStrip({
   );
 }
 
-function CompareTable({ a, b, onClose }: { a: KitCard; b: KitCard; onClose: () => void }) {
+function CompareTable({ a, b, onClose }: { a: LineageCard; b: LineageCard; onClose: () => void }) {
   const tri = (v?: boolean, yes = "yes", no = "no") => (v === undefined ? "—" : v ? yes : no);
-  const rows: [string, (c: KitCard) => string][] = [
+  const rows: [string, (c: LineageCard) => string][] = [
     ["Grade", (c) => `${c.mold.grade}${c.mold.line ? ` · ${c.mold.line}` : ""}`],
     ["Released", (c) => c.sku.releaseDate],
     ["List price", (c) => yen(c.latestYen)],

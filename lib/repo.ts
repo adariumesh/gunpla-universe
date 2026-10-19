@@ -254,12 +254,33 @@ export function getEraDensity(eraId: string, d: Db = db): number[] {
   return m.factions.flatMap((f) => f.columns.filter((c) => c.role !== "cameo").map((c) => c.kitCount));
 }
 
+/** Just what the lineage strip, editions list and compare table read; keeps kit pages small. */
+export type LineageCard = {
+  sku: Pick<KitSKU, "id" | "name" | "releaseDate" | "jan" | "bandaiItemCode">;
+  mold: Pick<Mold, "id" | "grade" | "line" | "versionLabel" | "specs">;
+  year: number;
+  row: GradeRow;
+  latestYen: number | null;
+};
+
+const toLineage = (c: KitCard): LineageCard => ({
+  sku: { id: c.sku.id, name: c.sku.name, releaseDate: c.sku.releaseDate, jan: c.sku.jan, bandaiItemCode: c.sku.bandaiItemCode },
+  mold: { id: c.mold.id, grade: c.mold.grade, line: c.mold.line, versionLabel: c.mold.versionLabel, specs: c.mold.specs },
+  year: c.year,
+  row: c.row,
+  latestYen: c.latestYen,
+});
+
+const LINEAGE_WINDOW = 40;
+
 export type KitDetail = {
   card: KitCard;
   suits: { suit: MobileSuit; role: string }[];
   primarySuit: MobileSuit;
-  editions: KitCard[];
-  lineage: KitCard[];
+  editions: LineageCard[];
+  /** up to LINEAGE_WINDOW kits of the same suit nearest this one by release date */
+  lineage: LineageCard[];
+  lineageTotal: number;
   eras: Era[];
 };
 
@@ -280,8 +301,12 @@ export function getKit(skuId: string, d: Db = db): KitDetail | null {
 
   const lineage = d.molds
     .filter((m) => m.subjects.some((s) => s.suitId === primaryId && s.role === "primary"))
-    .map((m) => representative(m.id, d)!)
-    .sort((a, b) => a.year - b.year || GRADE_ROWS.indexOf(a.row) - GRADE_ROWS.indexOf(b.row));
+    .map((m) => toLineage(representative(m.id, d)!))
+    .sort((a, b) => a.sku.releaseDate.localeCompare(b.sku.releaseDate) || GRADE_ROWS.indexOf(a.row) - GRADE_ROWS.indexOf(b.row));
+  // Popular suits have 200+ kits; keep pages light with a window around this kit.
+  const at = Math.max(0, lineage.findIndex((c) => c.mold.id === mold.id));
+  const from = Math.max(0, Math.min(at - LINEAGE_WINDOW / 2, lineage.length - LINEAGE_WINDOW));
+  const lineageWindow = lineage.slice(from, from + LINEAGE_WINDOW);
 
   const eraIds = new Set(d.appearances.filter((a) => a.suitId === primaryId).map((a) => a.eraId));
 
@@ -289,8 +314,9 @@ export function getKit(skuId: string, d: Db = db): KitDetail | null {
     card,
     suits: mold.subjects.map((s) => ({ suit: suitById.get(s.suitId)!, role: s.role })),
     primarySuit,
-    editions: d.skus.filter((k) => k.moldId === mold.id && k.id !== sku.id).map((k) => toCard(k, d)),
-    lineage,
+    editions: d.skus.filter((k) => k.moldId === mold.id && k.id !== sku.id).map((k) => toLineage(toCard(k, d))),
+    lineage: lineageWindow,
+    lineageTotal: lineage.length,
     eras: [...eraIds].map((id) => eraById.get(id)!).filter(Boolean),
   };
 }

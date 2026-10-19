@@ -35,7 +35,7 @@ export function KitTile({ card, layout = true }: { card: TileCard; layout?: bool
   return (
     <motion.div layoutId={layout ? `kit-${card.sku.id}` : undefined} className="relative">
       <Link
-        href={`/kit/${card.sku.id}`}
+        href={{ query: { kit: card.sku.id } }}
         scroll={false}
         className="group relative block overflow-hidden rounded-md border border-rule bg-panel p-2 shadow-[0_1px_0_var(--rule)] transition-colors hover:border-accent focus-visible:border-accent"
       >

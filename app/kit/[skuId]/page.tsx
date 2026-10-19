@@ -4,7 +4,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { KitDetailView } from "@/components/drawer/KitDetailView";
 import { TopControls } from "@/components/TopControls";
+import { db } from "@/lib/data";
 import { getKit } from "@/lib/repo";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return db.skus.map((k) => ({ skuId: k.id }));
+}
 
 type Props = { params: Promise<{ skuId: string }> };
 

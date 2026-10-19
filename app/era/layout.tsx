@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import { KitDrawerHost } from "@/components/drawer/KitDrawerHost";
 import { EraRail, type RailTimeline } from "@/components/timeline/EraRail";
 import { db } from "@/lib/data";
 import { getTimelines } from "@/lib/repo";
@@ -17,6 +19,9 @@ export default function EraLayout({ children }: { children: React.ReactNode }) {
     <div className="min-h-dvh md:pl-[76px]">
       <EraRail rails={rails} />
       {children}
+      <Suspense fallback={null}>
+        <KitDrawerHost />
+      </Suspense>
     </div>
   );
 }

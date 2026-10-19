@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run",
-    "ingest": "tsx scripts/ingest/index.ts"
+    "ingest": "tsx scripts/ingest/index.ts",
+    "build:pages": "PAGES_EXPORT=1 next build"
   },
   "dependencies": {
     "lucide-react": "1.59.0",

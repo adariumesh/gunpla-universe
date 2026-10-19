@@ -1,19 +1,25 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { EraView } from "@/components/matrix/EraView";
+import { db } from "@/lib/data";
 import { getEra, getEraMatrix } from "@/lib/repo";
 import type { Metadata } from "next";
 
-type Props = { params: Promise<{ eraId: string }>; searchParams: Promise<{ focus?: string }> };
+type Props = { params: Promise<{ eraId: string }> };
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return db.eras.map((e) => ({ eraId: e.id }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const era = getEra((await params).eraId);
   return { title: era ? `${era.code} ${era.label} · Gunpla Universe` : "Gunpla Universe" };
 }
 
-export default async function EraPage({ params, searchParams }: Props) {
+export default async function EraPage({ params }: Props) {
   const { eraId } = await params;
-  const { focus } = await searchParams;
   const era = getEra(eraId);
   if (!era) notFound();
 
@@ -33,5 +39,5 @@ export default async function EraPage({ params, searchParams }: Props) {
       </main>
     );
 
-  return <EraView matrix={getEraMatrix(eraId)!} focus={focus} />;
+  return <EraView matrix={getEraMatrix(eraId)!} />;
 }

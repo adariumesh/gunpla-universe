@@ -7,3 +7,4 @@ next-env.d.ts
 data/sources/cache
 .env*
 .claude/launch.json
+out

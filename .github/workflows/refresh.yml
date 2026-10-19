@@ -1,0 +1,43 @@
+name: Weekly data refresh
+
+# Re-fetches every source, and commits the new catalog only if the JAN
+# provenance audit and the tests pass. A failed audit never ships.
+on:
+  schedule:
+    - cron: "17 6 * * 1" # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Re-fetch sources (~1 request/second, honest User-Agent)
+        run: npm run ingest -- --refresh
+      - name: Audit every JAN against its cited source page
+        run: npm run validate:data
+      - run: npm test
+      - name: Commit if the catalog changed
+        run: |
+          git config user.name "gunpla-universe-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/generated
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "Weekly data refresh ($(date -u +%Y-%m-%d))"
+            git push
+          fi
