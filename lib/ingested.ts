@@ -43,14 +43,7 @@ function releaseProvenance(r: IngestedRelease): Provenance {
   if (r.merch && r.merch.source.url !== r.source.url) refs.push(r.merch.source);
   if (r.bandai) refs.push(r.bandai.source);
   const fields = ["release date", ...(r.yen || r.kitPage?.yen ? ["list price"] : []), ...(janOf(r) ? ["JAN"] : []), ...(itemCodeOf(r) ? ["Bandai item code"] : [])];
-  return {
-    source: "open-wiki",
-    confidence: agreeing.length || r.kitPage ? 0.9 : r.corroboration.length ? 0.6 : 0.75,
-    verifiedAt: r.source.fetchedAt.slice(0, 10),
-    refs,
-    unconfirmed: false,
-    fields,
-  };
+  return { verifiedAt: r.source.fetchedAt.slice(0, 10), refs, fields };
 }
 
 /** Exact day from the kit page / product index when it agrees with the list table's month. */
@@ -80,7 +73,7 @@ function specsOf(r: IngestedRelease): { specs: Mold["specs"]; provenance: Proven
   }
   return {
     specs,
-    provenance: { source: "open-wiki", confidence: fields.length ? 0.9 : 0, refs: fields.length && k ? [k.source] : [], unconfirmed: false, fields },
+    provenance: { refs: fields.length && k ? [k.source] : [], fields },
   };
 }
 

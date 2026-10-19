@@ -181,7 +181,7 @@ function SuitHeader({
     >
       <div className={`rounded-md ${focused ? "ring-2 ring-accent ring-offset-2 ring-offset-paper" : ""}`}>
         <p className="font-mono text-[11px]" style={{ color: tone }}>
-          {s.modelNumber}
+          {s.name.toUpperCase().startsWith(s.modelNumber.toUpperCase()) ? "\u00A0" : s.modelNumber}
         </p>
         <p className="truncate font-display text-lg font-bold leading-tight" title={s.name}>
           {s.name}

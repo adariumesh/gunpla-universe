@@ -2,7 +2,7 @@
 
 import { Search } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { MockBadge } from "./Glyph";
+import { SourcesBadge } from "./Glyph";
 import { withBase } from "@/lib/basePath";
 
 export const OPEN_PALETTE_EVENT = "gu:open-palette";
@@ -25,7 +25,7 @@ export function TopControls({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       <a href={withBase("/credits/")} className="mr-1 hidden lg:inline-flex" title="Credits and data sources">
-        <MockBadge />
+        <SourcesBadge />
       </a>
       <SearchButton />
       <ThemeToggle />

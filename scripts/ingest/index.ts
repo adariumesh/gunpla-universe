@@ -8,7 +8,7 @@
  *   3. Japanese Wikipedia corroborates release months by line number (CC BY-SA)
  *   4. gunpla.fyi product index (from Bandai's manual site) adds Bandai item
  *      codes, exact release days and official names
- *   5. Reconcile against the hand seed (data/kits.ts), which stays as curation
+ *   5. De-duplicate records that describe the same product (exact evidence only)
  *
  *   npm run ingest              # offline: re-parse cached snapshots
  *   npm run ingest -- --refresh # re-fetch (~1 req/s, honest User-Agent)
@@ -169,8 +169,12 @@ async function main() {
 
     const token = modelTokens([], box.title)[0];
     const words = box.title.split(/\s+/);
-    const modelNumber = token ? words[0] : (box.english ?? box.title);
-    const name = token ? words.slice(1).join(" ") || box.title : (box.english ?? box.title);
+    // Display split only (IDs still derive from `token`): model numbers like "RX-79[G]" or
+    // "GAT-X105+AQM/E-X01" fail the strict token pattern but are still the first word.
+    const looksLikeModel = (w: string) => /^[A-Z∀][A-Za-z]{0,6}-?[A-Za-z0-9∀\-[\]/+.()]*\d/.test(w) || /^[A-Z∀][A-Z0-9∀]*-[A-Z0-9∀\-[\]/+.()]+$/.test(w);
+    const splitTitle = (token || looksLikeModel(words[0])) && words.length > 1;
+    const modelNumber = splitTitle ? words[0] : (box.english ?? box.title);
+    const name = splitTitle ? words.slice(1).join(" ") : (box.english ?? box.title);
     // A curated id belongs to the page on the curated suit's own timeline; same-number pages from
     // other continuities (e.g. a Build Fighters "MSZ-006") must not take it.
     const curatedCandidate = token ? curatedByModel.get(token) : undefined;
@@ -804,7 +808,7 @@ function report(cat: Catalog, stats: Stats[], unresolved: RawRow[], unplaced: Ma
     "## Not covered by open sources",
     "",
     "- **JAN barcodes**: taken only from Gunpla Wiki kit pages and Gundam Wiki {{merch}} entries that state them (EAN-13 check digit validated). Kits with neither have none yet.",
-    "- **Engineering verdicts**: estimates by grade and era; never scraped.",
+    "- **Build scores** (stability, articulation, part counts, build time): no open source states them per kit, so the app shows none.",
     "",
     "Gundam Wiki and Wikipedia content is CC BY-SA; derived data here carries the same license. gunpla.fyi data is factual (names, item codes, dates), used with attribution; box art is not copied.",
   );

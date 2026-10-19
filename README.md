@@ -1,95 +1,78 @@
 # Gunpla Universe
 
-A three-level Gundam timeline and Gunpla kit discovery tool.
+**Live site:** https://adariumesh.github.io/gunpla-universe/
 
-1. **L1 · Timeline transit** (`/`): the infographic redrawn as an interactive strand map. Clicking a UC 0079–0093 station "straightens" its strand into the era rail. Below 768px it becomes a vertical metro list.
-2. **L2 · Suit × kit matrix** (`/era/[eraId]`): suits are columns grouped by faction, and grades are rows. Cells are **stacks** of releases (newest mold on top), and an empty cell is a ghost that says "never kitted". It has two lenses (Grade grid / Release timeline) that morph into each other. Low-weight variants (G-3, The Origin) are collapsed under their parent, and the persistent era rail lets you jump between eras without going back to the map.
-3. **L3 · Kit inspection** (`/kit/[skuId]`): a drawer over the matrix, using an intercepting route, or a full page when deep-linked or refreshed. It covers identity and MSRP history, engineering meters, build profile, lineage with side-by-side compare, frame family, a stock "telemetry" panel (mock adapters), and provenance.
+A visual guide to every Gundam timeline and the Gunpla model kits Bandai has released for each mobile suit. You start at a transit-map of the timelines, open an era to see its suits against every kit grade, and open a kit to see its sourced facts and where to buy it.
 
-The design spec this implements lives in the plan file from the planning session. In short: drafting canvas for structure, bridge-terminal (HUD) for accents. Light mode is "Vellum" and dark mode is "HUD".
+Every value in the catalog comes from a cited open source. Nothing is estimated or hand-typed, and missing facts are shown as missing.
 
-## Run
+## What's in it
 
-Node lives at `~/.local/node` (installed locally, no sudo). Put it on your PATH first:
+| | |
+|---|---|
+| Timelines | 12 (UC, FC, AC, AW, AG, AD 00, CE, PD, AS, RC, CC, Build), 29 stations, all open |
+| Mobile suits | 1,010, placed automatically from Gundam Wiki |
+| Kits | 3,333 (1,986 standard releases, the rest recolors and limited editions) |
+| Release date | 100% of kits (25% to the exact day) |
+| Bandai list price | 91% |
+| JAN barcode | 771 kits (23%), every one checked against its source page |
+| Bandai item code | 733 kits (22%), with a link to the official instruction manual |
+| Materials / glue (incl. ABS warnings) | 27% |
 
-```bash
-export PATH="$HOME/.local/node/bin:$PATH"
-```
+## The three sheets
 
-```bash
-npm run dev            # http://localhost:3000
-npm test               # selector tests (vitest)
-npm run validate:data  # zod schema + referential integrity
-npm run build
-```
+1. **Map** (`/`): the timelines drawn as transit lines; each station is an era.
+2. **Kit grid** (`/era/<era>/`): suits (columns, grouped by faction) × grades (rows). Each cell stacks every release of that suit in that grade, and empty cells say "never kitted". A release-timeline lens shows the same kits by year.
+3. **Kit detail** (drawer, `?kit=<key>`, or `/kit/<key>/`): identity, sourced specs, every kit of the same suit, retailer search links, and citations.
 
-## Publishing (GitHub Pages)
+Search (⌘K) covers suits and kits, including by item code and JAN.
 
-```bash
-npm run build:pages   # static site in out/, served under /gunpla-universe/
-```
+## Run it locally
 
-- `.github/workflows/deploy.yml` validates the data, runs the tests, builds the static site and deploys it to GitHub Pages on every push to `main`.
-- `.github/workflows/refresh.yml` re-runs `ingest --refresh` every Monday. It commits the new catalog only if the JAN audit and tests pass, and that commit triggers a deploy.
-- One-time setup: in the repo, go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
-- The kit drawer opens via `?kit=<key>` on era pages and loads pre-rendered `/kit-data/<key>` JSON, so it works without a server. Full kit pages live at `/kit/<key>/`.
-
-## Layout
-
-```
-data/        seed modules: timelines/eras/works, suits + appearances, kits (molds + SKUs)
-lib/         schema.ts (zod), data.ts (parse + integrity), repo.ts (selectors), stock.ts (RetailerAdapter), layout/strands.ts (L1 geometry)
-components/  timeline/ (StrandMap, MetroList, EraRail) · matrix/ (EraView, GradeGrid, TimelineLens, KitTile) · drawer/ (KitDrawer, KitDetailView, StockPanel)
-app/         routes; @drawer is the parallel slot that hosts the intercepted kit drawer
-```
-
-**Key model decision:** engineering facts live on the **Mold**, while JAN, price and stock live on each **KitSKU**. Reissues and limited editions are extra SKUs of the same mold. A variant suit (G-3, Char's Zaku) is its own `MobileSuit` with `variantOf`, and a recolor of the same plastic is a SKU edition.
-
-## Data: open-source ingestion (every timeline)
-
-The catalog is built from open sources by `npm run ingest`; nothing in it is hand-typed.
+Requires Node 20+.
 
 ```bash
-npm run ingest              # re-parse cached snapshots → data/generated/catalog.json
-npm run ingest -- --refresh # re-fetch from the sources (~1 req/s, honest User-Agent)
-npm run validate:data       # schema, integrity, and the JAN provenance audit
+npm install
+npm run dev              # http://localhost:3000
+npm test                 # 26 tests
+npm run validate:data    # schema, integrity, JAN provenance audit
+npm run build:pages      # static site in out/, as deployed
 ```
 
-| Source | What it provides | License |
+## How the data is built
+
+`npm run ingest` builds `data/generated/catalog.json` from four sources and writes `data/generated/ingest-report.md` (coverage, conflicts and gaps). Pass `-- --refresh` to re-fetch everything (about 1 request per second, honest User-Agent); otherwise it re-parses cached snapshots.
+
+| Source | Provides | License |
 |---|---|---|
-| [Gundam Wiki](https://gundam.fandom.com) list pages for every Gunpla line (≈60 pages) | kit rows: line no., release month, yen, edition | CC BY-SA 3.0 |
-| Gundam Wiki suit pages (infobox) | **suit discovery**: timeline (`era`), in-universe debut → transit station, operator, pilot | CC BY-SA 3.0 |
-| [Gunpla Wiki](https://gunpla.fandom.com) kit pages (`Plamo Infobox`) | **JAN**, exact release date, materials (ABS/KPS), glue, paint | CC BY-SA |
-| Japanese Wikipedia grade articles | corroborates release months by line number | CC BY-SA 4.0 |
-| [gunpla.fyi](https://gunpla.fyi) product index (from Bandai's manual site) | Bandai item code, official names, manual link | factual data, attributed |
+| [Gundam Wiki](https://gundam.fandom.com): list pages for every Gunpla line | kit rows: line number, release month, list price, edition | CC BY-SA 3.0 |
+| Gundam Wiki suit pages | timeline, in-universe debut (→ station), faction, pilot | CC BY-SA 3.0 |
+| [Gunpla Wiki](https://gunpla.fandom.com): one page per kit | JAN, exact release date, materials, glue, paint | CC BY-SA |
+| Japanese Wikipedia | independent cross-check of release months | CC BY-SA 4.0 |
+| [gunpla.fyi](https://gunpla.fyi) (index of Bandai's manual site) | Bandai item code, official name, manual link | factual data, attributed |
 
-Not scraped, because they reject automated clients: bandai-hobby.net, HobbySearch, Surugaya.
+**Integrity rules:**
+- A JAN is accepted only when a source page states it and it passes the EAN-13 check digit.
+- Records from different sources are merged only on an unambiguous match (same suit and grade, plus the same line number, the same manual ID, or the only release that month). Uncertain records stay separate.
+- A JAN published for two different kits is marked *disputed* and kept out (25 today; listed in the report).
+- Kits are keyed by **Bandai item code**, then **JAN**, then a stable source-derived ID.
+- Sites that refuse automated access (Bandai Hobby, HobbySearch, Surugaya, Modelverse, Reddit) are never scraped. They appear only as links.
 
-### JAN is the primary key, and nothing is fabricated
+## Deployment
 
-- JANs come **only** from a Gunpla Wiki kit page that publishes one. Each must pass the EAN-13 check digit and carry a Bandai/Japanese prefix.
-- A kit page is merged into a list-table release only on an **unambiguous** match: the same suit and grade, plus the same lineup number or the only release that month. Anything uncertain stays a standalone, JAN-keyed record.
-- A JAN published on two different kit pages is **disputed**. It is kept out of the dataset and listed in the report.
-- `catalog.json → jans` is the key table. Every JAN is there, including ones without a resolvable suit or date.
-- `validate:data` re-checks every shipped JAN against the exact cached source page it cites.
-- **Nothing is estimated.** Per-kit build scores (stability, articulation, part counts, build time), the USD bracket and the mock stock panel were removed. Specs show only what Gunpla Wiki states (materials, glue, paint), and missing values are shown as missing.
-- **Kit key**: `bandai-<item code>` when gunpla.fyi supplies Bandai's item code, else `jan-<JAN>`, else a stable source-derived ID.
-- **Suits**: facts (name, faction = first unqualified infobox operator, pilot, debut station) come from Gundam Wiki. `data/suits.ts` only adds editorial variant links and ordering.
-- **Where to buy**: plain retailer search links (HobbySearch, HLJ, Amazon, eBay) plus an r/Gunpla search link. No retailer or Reddit data is collected.
-- **Credits**: `/credits` lists sources and licenses. The derived catalog is downloadable at `/data/catalog.json` (CC BY-SA).
-- **Community build knowledge**: see `docs/reddit-plan.md`. Reddit disallows crawling, so this needs a Reddit account and the official API.
+GitHub Actions (`.github/workflows/`):
+- `deploy.yml`: on every push to `main`, validates the data, runs the tests, builds the static site and deploys it to GitHub Pages.
+- `refresh.yml`: every Monday, re-fetches all sources and commits the new catalog **only if** the JAN audit and tests pass, then redeploys.
 
-Read `data/generated/ingest-report.md` after each run for:
-- coverage by station
-- per-page parse stats
-- seed corrections
-- disputed JANs
-- unplaced suits
-- unmatched rows
+## Documentation
 
-## Deviations from the spec
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): code layout, data model, ingestion pipeline, static-site design
+- [docs/REVIEW.md](docs/REVIEW.md): project status, known limitations, decisions and open questions for reviewers
+- [docs/reddit-plan.md](docs/reddit-plan.md): options for adding community build knowledge
+- `data/generated/ingest-report.md`: output of the latest data run
 
-- **Next 16** instead of 15 (current release).
-- **No D3.** Every strand runs at 45°, so the geometry is simple arithmetic.
-- **No column virtualization yet.** UC 0079 has 189 columns and loads in about 0.3 s in production (98 KB gzipped). Tiles are slimmed for the matrix, and big eras skip the entrance animation. Virtualize if eras grow much further.
-- **Typed TS seed modules instead of JSON**, still validated with zod at load and by `validate:data`.
+## License
+
+- Code: [MIT](LICENSE).
+- Data (`data/generated/`, and the catalog download at `/data/catalog.json`): derived from CC BY-SA sources, so it is released under [CC BY-SA 4.0](DATA_LICENSE.md) with attribution to those sources.
+- Gundam, Gunpla and related names are trademarks of Sotsu, Sunrise and BANDAI SPIRITS. This is an unofficial fan project, not affiliated with them or with any source listed above.

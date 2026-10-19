@@ -63,7 +63,7 @@ export function TimelineLens({
             return (
               <div key={c.suit.id} role="row" className={`flex border-t border-rule ${c.role === "cameo" ? "opacity-60" : ""}`}>
                 <div role="rowheader" className="sticky left-0 z-10 shrink-0 bg-paper py-2 pr-3" style={{ width: LABEL_W }}>
-                  <p className="font-mono text-[10px] text-ink-3">{c.suit.modelNumber}</p>
+                  <p className="font-mono text-[10px] text-ink-3">{c.suit.name.toUpperCase().startsWith(c.suit.modelNumber.toUpperCase()) ? "\u00A0" : c.suit.modelNumber}</p>
                   <p className="truncate font-display text-base font-bold leading-tight">
                     {c.parentId && <span className="text-ink-3">↳ </span>}
                     {c.suit.name}

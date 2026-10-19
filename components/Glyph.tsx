@@ -49,7 +49,7 @@ export function GradeChip({ grade, className = "" }: { grade: string; className?
   );
 }
 
-export function MockBadge({ className = "" }: { className?: string }) {
+export function SourcesBadge({ className = "" }: { className?: string }) {
   return (
     <span
       title="Every value comes from a cited open source (Gundam Wiki, Gunpla Wiki, Wikipedia, gunpla.fyi). Missing values are shown as missing, never estimated."

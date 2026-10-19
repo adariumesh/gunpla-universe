@@ -2,6 +2,16 @@
   "name": "gunpla-universe",
   "version": "0.1.0",
   "private": true,
+  "description": "Every Gundam timeline and every Gunpla kit for each mobile suit, built from cited open data.",
+  "license": "MIT",
+  "homepage": "https://adariumesh.github.io/gunpla-universe/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adariumesh/gunpla-universe.git"
+  },
+  "engines": {
+    "node": ">=20.9"
+  },
   "type": "module",
   "scripts": {
     "dev": "next dev",

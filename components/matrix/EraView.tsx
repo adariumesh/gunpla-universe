@@ -4,7 +4,7 @@ import { ChartGantt, LayoutGrid } from "lucide-react";
 import { LayoutGroup, motion } from "motion/react";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useState } from "react";
-import { MockBadge } from "@/components/Glyph";
+import { SourcesBadge } from "@/components/Glyph";
 import { TopControls } from "@/components/TopControls";
 import { GRADE_ROWS, GRADE_ROW_LABEL, type EraMatrix, type GradeRow } from "@/lib/repo";
 import { GradeGrid } from "./GradeGrid";
@@ -82,7 +82,7 @@ export function EraView({ matrix }: { matrix: EraMatrix }) {
             <p className="mt-1 font-mono text-[11px] text-ink-3">
               {suitCount} suits · {matrix.kitCount} kits · {matrix.yearRange[0]}–{matrix.yearRange[1]}
               <span className="ml-3 inline-flex align-middle lg:hidden">
-                <MockBadge />
+                <SourcesBadge />
               </span>
             </p>
           </div>

@@ -323,11 +323,16 @@ export function getKit(skuId: string, d: Db = db): KitDetail | null {
 
 export type SearchEntry = { kind: "suit" | "kit"; id: string; label: string; sub: string; href: string };
 
+/** "RX-78-2 Gundam"; just the name when the source has no separate model number. */
+export function suitLabel(s: Pick<MobileSuit, "modelNumber" | "name">): string {
+  return s.name.toUpperCase().startsWith(s.modelNumber.toUpperCase()) ? s.name : `${s.modelNumber} ${s.name}`;
+}
+
 export function getSearchIndex(d: Db = db): SearchEntry[] {
   const { suitById, eraById } = idx(d);
   const suitsOut: SearchEntry[] = d.suits.map((s) => {
     const era = eraById.get(s.debutEraId)!;
-    return { kind: "suit", id: s.id, label: `${s.modelNumber} ${s.name}`, sub: `${era.code} · ${era.label}`, href: `/era/${era.id}?focus=${s.id}` };
+    return { kind: "suit", id: s.id, label: suitLabel(s), sub: `${era.code} · ${era.label}`, href: `/era/${era.id}?focus=${s.id}` };
   });
   const kitsOut: SearchEntry[] = d.skus.map((k) => {
     const card = toCard(k, d);

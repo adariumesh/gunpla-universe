@@ -1,8 +1,8 @@
 # Ingest report
 
-Generated 2026-10-19T19:16:57.764Z by `npm run ingest`. Do not edit by hand.
+Generated 2026-10-19T23:00:24.010Z by `npm run ingest`. Do not edit by hand.
 
-**1010 suits · 3368 releases** (1998 standard) · 756 with JAN · 733 with Bandai item code · 888 with materials
+**1010 suits · 3368 releases** (1998 standard) · 756 with JAN · 732 with Bandai item code · 888 with materials
 
 ## Coverage by station
 
@@ -113,7 +113,7 @@ Generated 2026-10-19T19:16:57.764Z by `npm run ingest`. Do not edit by hand.
 | ja-wikipedia | [パーフェクトグレード](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780932 | CC BY-SA 4.0 | 1 | 22 | 0 |
 | gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1184 kit pages (938 with JAN) | 610 merged into list rows · 282 standalone · 22 ambiguous + 13 contested kept separate |
 | gundam-wiki | {{merch}} entries on the list pages above | per page | CC BY-SA 3.0 | — | 51 kit rows (46 with JAN) | 3 joined to table rows · 46 standalone · 0 ambiguous · 2 no suit |
-| gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1896 Gundam products | 733 matched |
+| gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1896 Gundam products | 732 matched |
 
 ## JAN by source (771 releases)
 
@@ -393,7 +393,7 @@ First 60.
 - HGTWFM Mirasoul Flight Unit (model of: —)
 - HG Huckebein Mk-II (model of: —)
 
-## gunpla.fyi products not matched (1163)
+## gunpla.fyi products not matched (1164)
 
 First 80. Kits on pages not yet ingested, or names too different to match safely.
 
@@ -481,6 +481,6 @@ First 80. Kits on pages not yet ingested, or names too different to match safely
 ## Not covered by open sources
 
 - **JAN barcodes**: taken only from Gunpla Wiki kit pages and Gundam Wiki {{merch}} entries that state them (EAN-13 check digit validated). Kits with neither have none yet.
-- **Engineering verdicts**: estimates by grade and era; never scraped.
+- **Build scores** (stability, articulation, part counts, build time): no open source states them per kit, so the app shows none.
 
 Gundam Wiki and Wikipedia content is CC BY-SA; derived data here carries the same license. gunpla.fyi data is factual (names, item codes, dates), used with attribution; box art is not copied.

@@ -3,9 +3,9 @@
 import { Check, GitCompareArrows, Minus, TriangleAlert } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { GradeChip, MockBadge } from "@/components/Glyph";
+import { GradeChip, SourcesBadge } from "@/components/Glyph";
 import { ArtPlate } from "@/components/matrix/KitTile";
-import type { KitDetail, LineageCard } from "@/lib/repo";
+import { suitLabel, type KitDetail, type LineageCard } from "@/lib/repo";
 import { RetailerLinks } from "./RetailerLinks";
 
 const yen = (n: number | null) => (n === null ? "—" : `¥${n.toLocaleString("en-US")}`);
@@ -37,7 +37,7 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
             {mold.scale}
             {mold.line ? ` · ${mold.line}` : ""}
           </span>
-          <MockBadge className="ml-auto" />
+          <SourcesBadge className="ml-auto" />
         </div>
         <h2 className="mt-2 font-display text-3xl font-bold leading-tight">{sku.name}</h2>
         {sku.officialName && sku.officialName.toLowerCase() !== sku.name.toLowerCase() && (
@@ -48,7 +48,7 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
             <span key={suit.id}>
               {i > 0 && " + "}
               <Link href={`/era/${suit.debutEraId}?focus=${suit.id}`} className="underline decoration-rule underline-offset-4 hover:decoration-ink">
-                {suit.modelNumber} {suit.name}
+                {suitLabel(suit)}
               </Link>
               {role !== "primary" && <span className="text-ink-3"> ({role})</span>}
             </span>

@@ -170,14 +170,6 @@ body {
   );
 }
 
-/* HUD-accent moments only: scanline overlay used by the stock "telemetry" panel. */
-.scanlines {
-  background-image: repeating-linear-gradient(
-    0deg,
-    color-mix(in oklch, var(--hud) 9%, transparent) 0 1px,
-    transparent 1px 3px
-  );
-}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;

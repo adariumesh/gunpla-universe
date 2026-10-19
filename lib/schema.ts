@@ -5,7 +5,7 @@ import { z } from "zod";
  *   TimelineNode → Era (station) → Work
  *   MobileSuit ↔ Era via SuitAppearance (debut | main | cameo)
  *   MobileSuit ↔ Mold via Mold.subjects
- *   Mold (engineering) → KitSKU (JAN-keyed retail release) → RetailerOffer
+ *   Mold (sourced specs) → KitSKU (retail release keyed by Bandai item code, then JAN)
  *
  * Sourced specs (materials, glue, paint) live on the Mold; price, JAN and item
  * code live on each SKU. Nothing is estimated: absent means no source says.
@@ -28,15 +28,13 @@ export const SourceRef = z.object({
 });
 export type SourceRef = z.infer<typeof SourceRef>;
 
+/** Where a record's values come from. Every shipped value is cited; nothing is scored or estimated. */
 export const Provenance = z.object({
-  source: z.enum(["bandai-official", "manual", "community", "open-wiki", "mock-estimate"]),
-  confidence: z.number().min(0).max(1),
+  /** date the cited pages were fetched */
   verifiedAt: z.string().optional(),
-  /** citations for sourced values (open-wiki) */
+  /** the source pages that state these values */
   refs: z.array(SourceRef).default([]),
-  /** set when no open source has confirmed this record */
-  unconfirmed: z.boolean().default(false),
-  /** which fields the refs back (the rest are estimates), e.g. ["materials", "glue"] */
+  /** which fields the refs back, e.g. ["release date", "JAN"] or ["materials", "glue"] */
   fields: z.array(z.string()).default([]),
 });
 export type Provenance = z.infer<typeof Provenance>;
@@ -155,17 +153,6 @@ export const KitSKU = z.object({
 });
 export type KitSKU = z.infer<typeof KitSKU>;
 
-export const RetailerOffer = z.object({
-  skuId: string(),
-  retailer: string(),
-  url: string(),
-  priceMinor: z.number().int(),
-  currency: string(),
-  inStock: z.boolean(),
-  checkedAt: string(),
-  mock: z.boolean(),
-});
-export type RetailerOffer = z.infer<typeof RetailerOffer>;
 
 function string() {
   return z.string().min(1);
@@ -193,8 +180,6 @@ export const IngestedRelease = z.object({
   corroboration: z
     .array(z.object({ source: SourceRef, releaseDate: z.string().optional(), agrees: z.boolean() }))
     .default([]),
-  /** seed mold this release was reconciled to, if any */
-  seedMoldId: z.string().optional(),
   /** per-kit page on Gunpla Wiki: JAN, materials, glue/paint */
   kitPage: z
     .object({

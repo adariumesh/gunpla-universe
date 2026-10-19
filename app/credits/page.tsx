@@ -109,7 +109,7 @@ export default function CreditsPage() {
         <h2 className="mt-8 font-display text-2xl font-bold">Not used</h2>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-ink-2">
           <li>Box art and product photos (Bandai copyright). Kit tiles show schematic plates instead.</li>
-          <li>Sites that refuse automated access: bandai-hobby.net, HobbySearch, Surugaya. They appear only as plain search links.</li>
+          <li>Sites that refuse automated access or forbid scraping: bandai-hobby.net, HobbySearch, Surugaya, Modelverse and Reddit. They appear only as plain search links.</li>
           <li>Estimated build scores (stability, articulation, part counts, build time). These were removed because no source states them per kit.</li>
         </ul>
 
