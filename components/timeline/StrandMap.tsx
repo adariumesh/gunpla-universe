@@ -99,11 +99,11 @@ export function StrandMap({ strands, cc }: { strands: StrandVM[]; cc: { code: st
           strokeWidth={CC_RING.width}
         />
         <g textAnchor="end" className="font-display" fill="var(--ink)">
-          <text x={1332} y={1196} fontSize={24} fontWeight={600}>C.C.</text>
-          <text x={1332} y={1226} fontSize={24} fontWeight={600}>Correct Century</text>
-          <text x={1332} y={1272} fontSize={22} fontWeight={600} fill="var(--strand-cc)">{cc.code} {cc.label.split(" ")[0]}</text>
-          <text x={1332} y={1298} fontSize={22} fontWeight={600} fill="var(--strand-cc)">{cc.label.split(" ").slice(1).join(" ")}</text>
-          <text x={1332} y={1330} fontSize={20} fill="var(--ink-2)" className="font-sans">Turn A Gundam</text>
+          <text x={1406} y={1355} fontSize={24} fontWeight={600}>C.C.</text>
+          <text x={1406} y={1385} fontSize={24} fontWeight={600}>Correct Century</text>
+          <text x={1406} y={1431} fontSize={22} fontWeight={600} fill="var(--strand-cc)">{cc.code} {cc.label.split(" ")[0]}</text>
+          <text x={1406} y={1457} fontSize={22} fontWeight={600} fill="var(--strand-cc)">{cc.label.split(" ").slice(1).join(" ")}</text>
+          <text x={1406} y={1489} fontSize={20} fill="var(--ink-2)" className="font-sans">Turn A Gundam</text>
         </g>
       </g>
 
@@ -235,6 +235,12 @@ function Station({
             className={`font-display ${st.available ? "station-title" : ""}`}
           >
             {title}
+            {/* Kit count inline with the title keeps each station to title + works lines. */}
+            {st.available && st.density.length > 0 && (
+              <tspan fontSize={11} fontWeight={400} fill="var(--ink-3)" className="font-mono" dx={8}>
+                {st.density.reduce((a, b) => a + b, 0)} kits
+              </tspan>
+            )}
           </text>
           {st.works.map((w, i) => {
             const p = workLabelPos(st, i, false);
@@ -254,7 +260,6 @@ function Station({
           })}
         </>
       )}
-      {st.available && st.density.length > 0 && st.side !== "along" && <Sparkline st={st} color={color} />}
     </g>
   );
 
@@ -293,33 +298,6 @@ function Station({
       {dot}
       {labels}
     </a>
-  );
-}
-
-/** Kits-per-suit bars to the left of the station: an information-scent preview of the matrix. */
-function Sparkline({ st, color }: { st: StationVM; color: string }) {
-  const bw = 3.5;
-  const gap = 2;
-  // Fixed footprint: the 14 most-kitted suits, tallest first, so dense eras don't spill across strands.
-  const bars = [...st.density].sort((a, b) => b - a).slice(0, 14);
-  const w = bars.length * (bw + gap);
-  const max = Math.max(...bars, 1);
-  const total = st.density.reduce((a, b) => a + b, 0);
-  // Sits as one more line under the work titles, in the slot that already steps clear of the strand.
-  const slot = workLabelPos(st, st.works.length, false);
-  const left = slot.anchor === "end";
-  const x0 = left ? slot.x - w : slot.x;
-  const y0 = slot.y - 2;
-  return (
-    <g aria-hidden>
-      {bars.map((n, i) => {
-        const h = Math.max(2, (n / max) * 14);
-        return <rect key={i} x={x0 + i * (bw + gap)} y={y0 - h} width={bw} height={h} fill={color} opacity={0.75} />;
-      })}
-      <text x={left ? x0 - 6 : x0 + w + 6} y={y0} textAnchor={left ? "end" : "start"} fontSize={11} fill="var(--ink-3)" className="font-mono">
-        {total} kits
-      </text>
-    </g>
   );
 }
 

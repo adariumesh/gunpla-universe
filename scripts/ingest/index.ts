@@ -18,6 +18,7 @@
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { suits as curatedSuits } from "../../data/suits";
+import { stationsForSeries } from "../../data/series";
 import { eras } from "../../data/timelines";
 import { Catalog, type DiscoveredSuit, type Era, type IngestedRelease, type JanRecord, type SourceRef, type TimelineId } from "../../lib/schema";
 import { debutYear, fetchInfoboxes, infoboxRef, stationFor, timelineOf, type Infobox } from "./discover";
@@ -150,18 +151,43 @@ async function main() {
   const suitByModel = new Map<string, DiscoveredSuit>();
   const unplaced = new Map<string, string>();
 
-  const placeSuit = (box: Infobox, seriesHint: string): DiscoveredSuit | undefined => {
+  const debutYearOf = new Map<string, number | undefined>(); // suit id → infobox debut year
+
+  /** Station from a series family, using the debut year to choose within multi-station series. */
+  const pickFromFamily = (family: string[], year?: number): Era => {
+    const st = family.map((id) => eras.find((e) => e.id === id)!);
+    if (year === undefined) return st[0];
+    return [...st].reverse().find((e) => e.yearStart !== null && e.yearStart <= year) ?? st[0];
+  };
+
+  const placeSuit = (box: Infobox, seriesHint: string, series?: string): DiscoveredSuit | undefined => {
     const existing = suitByBoxTitle.get(box.title);
     if (existing) return existing;
-    const timeline: TimelineId | undefined = timelineOf(box.era) ?? (BUILD_SERIES.some(([re]) => re.test(seriesHint)) ? "BUILD" : undefined);
+    const year = debutYear(box.first);
+    const family = stationsForSeries(series);
+    const familyTimeline = family ? eras.find((e) => e.id === family[0])!.timelineId : undefined;
+    const timeline: TimelineId | undefined =
+      timelineOf(box.era) ?? familyTimeline ?? (BUILD_SERIES.some(([re]) => re.test(seriesHint)) ? "BUILD" : undefined);
     if (!timeline) {
-      unplaced.set(box.title, `no timeline (era: ${box.era ?? "—"})`);
+      unplaced.set(box.title, `no timeline (era: ${box.era ?? "—"}; series: ${series ?? "—"})`);
       return undefined;
     }
-    const era: Era | undefined =
-      timeline === "BUILD"
-        ? eras.find((e) => e.id === (BUILD_SERIES.find(([re]) => re.test(seriesHint))?.[1] ?? "build-8th"))
-        : stationFor(timeline, debutYear(box.first), eras);
+    // Provisional; the post-pass re-places every suit by majority over all its kits.
+    let placement: NonNullable<DiscoveredSuit["placement"]>;
+    let era: Era | undefined;
+    if (family && familyTimeline === timeline) {
+      era = pickFromFamily(family, year);
+      placement = { by: "series", evidence: series! };
+    } else if (timeline === "BUILD") {
+      era = eras.find((e) => e.id === (BUILD_SERIES.find(([re]) => re.test(seriesHint))?.[1] ?? "build-8th"));
+      placement = { by: "series", evidence: seriesHint.trim() };
+    } else if (year !== undefined) {
+      era = stationFor(timeline, year, eras);
+      placement = { by: "year", evidence: `debut ${box.first}` };
+    } else {
+      era = stationFor(timeline, undefined, eras);
+      placement = { by: "none", evidence: "no series or debut date in sources" };
+    }
     if (!era) {
       unplaced.set(box.title, `no station on ${timeline}`);
       return undefined;
@@ -196,11 +222,13 @@ async function main() {
       continuity: curated?.continuity ?? "main",
       debutEraId: era.id,
       canonWeight: curated?.canonWeight ?? 0, // filled from kit counts below
+      placement,
       kanji: box.kanji,
       wikiTitle: box.title,
       source: infoboxRef(box),
     };
     suitsById.set(id, suit);
+    debutYearOf.set(id, year);
     suitByBoxTitle.set(box.title, suit);
     if (token && !suitByModel.has(token)) suitByModel.set(token, suit);
     return suit;
@@ -212,7 +240,7 @@ async function main() {
     const hint = `${series ?? ""} ${r.page.title} ${r.section}`;
     for (const t of linkTargets(model).slice(0, 3)) {
       const box = boxes.get(t);
-      if (box) return placeSuit(box, hint);
+      if (box) return placeSuit(box, hint, series);
     }
     // No linked suit page: fall back to a model number in the text.
     const tok = (r.col.modelNo >= 0 && r.row[r.col.modelNo] ? modelTokens([], r.row[r.col.modelNo].text) : modelTokens([], model.text))[0];
@@ -253,6 +281,7 @@ async function main() {
       yen: r.col.price >= 0 ? parseYen(r.row[r.col.price]?.text ?? "") : undefined,
       notes: notes || undefined,
       section: `${r.page.title} / ${r.section}`,
+      series: (r.col.series >= 0 ? r.row[r.col.series]?.text : undefined) || undefined,
       extras,
       source: r.ref,
     };
@@ -304,7 +333,7 @@ async function main() {
       const t = suitPage(e.row);
       const box = t ? boxes.get(t) : undefined;
       const tok = modelTokens([], t ?? "")[0];
-      const suit = box ? placeSuit(box, `${e.row.series ?? ""} ${e.page.title}`) : tok ? suitByModel.get(tok) : undefined;
+      const suit = box ? placeSuit(box, `${e.row.series ?? ""} ${e.page.title}`, e.row.series) : tok ? suitByModel.get(tok) : undefined;
       if (!suit) {
         ms.noSuit.push(e);
         merchFate.set(e, { status: "no-suit" });
@@ -385,6 +414,7 @@ async function main() {
         yen: row.yen,
         notes: row.note,
         section: `${page.title} / merch`,
+        series: row.series,
         extras: {},
         source: e.ref,
         corroboration: [],
@@ -410,7 +440,7 @@ async function main() {
     for (const [t, b] of await fetchInfoboxes(unseen, refresh)) boxes.set(t, b);
     const suitFor = (k: KitPage) => {
       const box = k.modelOf ? boxes.get(k.modelOf) : undefined;
-      if (box) return placeSuit(box, `${k.franchise ?? ""} ${k.classification}`);
+      if (box) return placeSuit(box, `${k.franchise ?? ""} ${k.classification}`, k.franchise);
       const tok = modelTokens([], k.modelOf ?? "")[0];
       return tok ? suitByModel.get(tok) : undefined;
     };
@@ -536,6 +566,7 @@ async function main() {
         releaseDate: k.releaseDate,
         yen: k.yen,
         section: `Gunpla Wiki / ${k.classification}`,
+        series: k.franchise,
         extras: {},
         source: k.ref,
         corroboration: [],
@@ -601,6 +632,41 @@ async function main() {
     kp.error = String(e);
   }
 
+  // ── Placement post-pass: every suit goes where its kits' series say, by majority ──
+  const placementStats = { series: 0, year: 0, parent: 0, none: 0 };
+  for (const s of suitsById.values()) {
+    const votes = new Map<string, { n: number; family: string[]; series: string }>();
+    for (const r of releases) {
+      if (r.suitId !== s.id) continue;
+      const family = stationsForSeries(r.series);
+      if (!family) continue;
+      const key = family.join(",");
+      const v = votes.get(key) ?? { n: 0, family, series: r.series! };
+      v.n += r.edition === "standard" ? 2 : 1;
+      votes.set(key, v);
+    }
+    const best = [...votes.values()].sort((a, b) => b.n - a.n)[0];
+    const currentTimeline = eras.find((e) => e.id === s.debutEraId)!.timelineId;
+    if (best) {
+      const era = pickFromFamily(best.family, debutYearOf.get(s.id));
+      // A series from a different timeline (e.g. a Build Fighters kit of a UC suit) doesn't move the suit.
+      if (era.timelineId === currentTimeline || s.placement?.by === "none" || currentTimeline === "BUILD") {
+        s.debutEraId = era.id;
+        s.placement = { by: "series", evidence: best.series };
+      }
+    }
+  }
+  // Undated variants inherit a placed parent's station (curated variant links only).
+  for (const s of suitsById.values()) {
+    if (s.placement?.by !== "none" || !s.variantOf) continue;
+    const parent = suitsById.get(s.variantOf);
+    if (parent && parent.placement?.by !== "none") {
+      s.debutEraId = parent.debutEraId;
+      s.placement = { by: "parent", evidence: `variant of ${parent.modelNumber} ${parent.name}` };
+    }
+  }
+  for (const s of suitsById.values()) placementStats[s.placement?.by ?? "none"]++;
+
   // Kit counts drive "hero suits first" for discovered suits.
   const standardCount = new Map<string, number>();
   for (const r of releases) if (r.edition === "standard") standardCount.set(r.suitId, (standardCount.get(r.suitId) ?? 0) + 1);
@@ -628,6 +694,7 @@ async function main() {
     `suits ${catalog.suits.length} · releases ${releases.length} (standard ${releases.filter((r) => r.edition === "standard").length}) · duplicates merged ${dedupe.merged.length} · unresolved rows ${unresolved.length}`,
   );
   console.log(`gunpla.fyi: ${fyi.error || `${fyi.matched}/${fyi.gundam} Gundam products matched`}`);
+  console.log(`placement: ${JSON.stringify(placementStats)} · unplaced suit pages ${unplaced.size}`);
   console.log(`Gunpla Wiki: ${kp.error || `${kp.pages} kit pages · ${kp.withJan} with JAN · merged ${kp.matched} · standalone ${kp.added} · ambiguous ${kp.ambiguous} · contested ${kp.contested} · no suit ${kp.noSuit.length}`}`);
   const byStatus: Record<string, number> = {};
   for (const j of janRecords) byStatus[j.status] = (byStatus[j.status] ?? 0) + 1;
@@ -786,6 +853,28 @@ function report(cat: Catalog, stats: Stats[], unresolved: RawRow[], unplaced: Ma
   L.push("", `## Cross-source disagreements (${disagreements.length})`, "");
   for (const r of disagreements)
     for (const c of r.corroboration.filter((x) => !x.agrees)) L.push(`- ${r.lineLabel ?? r.name}: Gundam Wiki ${r.releaseDate ?? "?"} vs ${c.source.name} ${c.releaseDate ?? "?"}`);
+
+  const by = (k: string) => cat.suits.filter((s) => s.placement?.by === k);
+  const stationCode = (id: string) => eras.find((e) => e.id === id)?.code ?? id;
+  L.push(
+    "",
+    "## Station placement",
+    "",
+    "Each suit sits at the station of the series most of its kits come from (`data/series.ts`); multi-station series use the in-universe debut year to choose. Without series data the debut year decides; with neither, the suit is marked undated.",
+    "",
+    `| Method | Suits |`,
+    `|---|---|`,
+    `| series | ${by("series").length} |`,
+    `| debut year | ${by("year").length} |`,
+    `| parent (variant) | ${by("parent").length} |`,
+    `| undated (no evidence) | ${by("none").length} |`,
+    "",
+    "Undated suits (shown on their timeline's first station with an *undated* marker):",
+    "",
+  );
+  for (const s of by("none")) L.push(`- ${s.modelNumber === s.name ? s.name : `${s.modelNumber} ${s.name}`} → ${stationCode(s.debutEraId)}`);
+  L.push("", "Placed by debut year only (no mapped series among their kits):", "");
+  for (const s of by("year")) L.push(`- ${s.modelNumber === s.name ? s.name : `${s.modelNumber} ${s.name}`} → ${stationCode(s.debutEraId)} (${s.placement!.evidence})`);
 
   L.push("", `## Suit pages without a timeline (${unplaced.size})`, "", "Infobox `era` not recognised. Extend `ERA_TIMELINE` in discover.ts if these matter.", "");
   for (const [t, why] of [...unplaced].slice(0, 80)) L.push(`- ${t}: ${why}`);

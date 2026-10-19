@@ -1,51 +1,61 @@
 # Ingest report
 
-Generated 2026-10-19T23:00:24.010Z by `npm run ingest`. Do not edit by hand.
+Generated 2026-10-19T23:41:56.092Z by `npm run ingest`. Do not edit by hand.
 
-**1010 suits · 3368 releases** (1998 standard) · 756 with JAN · 732 with Bandai item code · 888 with materials
+**1028 suits · 3415 releases** (2025 standard) · 764 with JAN · 736 with Bandai item code · 897 with materials
 
 ## Coverage by station
 
 | Station | Suits | Releases |
 |---|---|---|
-| UC 0079 · One Year War | 207 | 925 |
-| UC 0083 · Operation Stardust | 24 | 107 |
-| UC 0087 · Gryps Conflict | 35 | 133 |
-| UC 0088 · First Neo Zeon War | 40 | 117 |
-| UC 0093 · Char's Rebellion | 19 | 174 |
-| UC 0096 · Laplace Box Recovery | 19 | 57 |
-| UC 0097 · Phoenix Hunter | 2 | 3 |
-| UC 0105 · Mafty's Uprising | 26 | 55 |
-| UC 0123 · Cosmo Babylonia Founded | 18 | 33 |
+| UC 0079 · One Year War | 165 | 845 |
+| UC 0083 · Operation Stardust | 17 | 57 |
+| UC 0085 · Zeon-Victory Branch | 13 | 20 |
+| UC 0087 · Gryps Conflict | 43 | 180 |
+| UC 0088 · First Neo Zeon War | 32 | 80 |
+| UC 0093 · Char's Rebellion | 18 | 146 |
+| UC 0096 · Laplace Box Recovery | 47 | 174 |
+| UC 0097 · Phoenix Hunter | 5 | 14 |
+| UC 0105 · Mafty's Uprising | 4 | 8 |
+| UC 0111 · Formula Project | 26 | 37 |
+| UC 0123 · Cosmo Babylonia Founded | 12 | 31 |
+| UC 0133 · Crossbone Vanguard vs Jupiter | 11 | 22 |
 | UC 0153 · Zanscare Empire Invasion | 15 | 39 |
 | UC 0223 · CONSENT Assault on Gaia | 1 | 1 |
 | RC 1014 · Attack on Capital Tower | 21 | 27 |
 | FC 60 · 13th Gundam Fight | 11 | 64 |
-| AC 195 · Operation Meteor | 38 | 180 |
-| AC 196 · True Operation Meteor | 2 | 10 |
+| AC 195 · Operation Meteor | 15 | 90 |
+| AC 196 · True Operation Meteor | 25 | 100 |
 | AW 15 · 8th Space War | 12 | 40 |
-| AG 115 · UE Attack | 38 | 94 |
-| AD 2307 · Celestial Being Intervention | 72 | 243 |
-| AD 2313 · ELS First Contact | 7 | 23 |
-| CE 71 · Bloody Valentine War | 78 | 342 |
-| CE 73 · Second Bloody Valentine War | 43 | 181 |
+| AG 115 · UE Attack | 19 | 44 |
+| AG 141 · Second Generation (Asemu) | 9 | 23 |
+| AG 164 · Third Generation (Kio) | 10 | 27 |
+| AD 2307 · Celestial Being Intervention | 43 | 146 |
+| AD 2312 · A-Laws Conflict | 27 | 95 |
+| AD 2313 · ELS First Contact | 9 | 25 |
+| CE 71 · Bloody Valentine War | 65 | 317 |
+| CE 73 · Second Bloody Valentine War | 41 | 187 |
+| CE 75 · Foundation War | 15 | 19 |
 | AD 2009 · “Real G” Plan | 8 | 10 |
-| AD ?? · 8th Gunpla World Tournament | 70 | 117 |
-| AD ?? · 11th Gunpla World Tournament | 29 | 57 |
+| AD ?? · 8th Gunpla World Tournament | 75 | 126 |
+| AD ?? · 11th Gunpla World Tournament | 32 | 60 |
 | AD ?? · 1st Coalition of Volunteers Battle | 35 | 58 |
-| AD ?? · 2nd Coalition of Volunteers Battle | 50 | 76 |
-| PD 300 · Mars Independence Movement | 56 | 140 |
-| AS 109 · Attack on Fólkvangr | 32 | 54 |
+| AD ?? · 2nd Coalition of Volunteers Battle | 42 | 64 |
+| PD 300 · Mars Independence Movement | 48 | 120 |
+| PD 325 · Gjallarhorn Civil War | 8 | 20 |
+| AS 109 · Attack on Fólkvangr | 4 | 8 |
+| AS 122 · Asticassia School War | 28 | 46 |
 | CC 2345 · Moonrace Return Plan | 2 | 8 |
+| SD · Knight, Musha & Command Legends | 15 | 37 |
 
 ## Sources
 
 | Source | Page | Revision | License | Tables | Kit rows | Resolved to a suit |
 |---|---|---|---|---|---|---|
-| gundam-wiki | [Master Grade](https://gundam.fandom.com/wiki/Master_Grade) | 704874 | CC BY-SA 3.0 | 84 | 775 | 739 |
+| gundam-wiki | [Master Grade](https://gundam.fandom.com/wiki/Master_Grade) | 704874 | CC BY-SA 3.0 | 84 | 775 | 746 |
 | gundam-wiki | [Real Grade](https://gundam.fandom.com/wiki/Real_Grade) | 704346 | CC BY-SA 3.0 | 36 | 211 | 197 |
 | gundam-wiki | [Perfect Grade](https://gundam.fandom.com/wiki/Perfect_Grade) | 704347 | CC BY-SA 3.0 | 9 | 73 | 72 |
-| gundam-wiki | [Entry Grade](https://gundam.fandom.com/wiki/Entry_Grade) | 701677 | CC BY-SA 3.0 | 10 | 51 | 49 |
+| gundam-wiki | [Entry Grade](https://gundam.fandom.com/wiki/Entry_Grade) | 701677 | CC BY-SA 3.0 | 10 | 51 | 50 |
 | gundam-wiki | [First Grade](https://gundam.fandom.com/wiki/First_Grade) | 633347 | CC BY-SA 3.0 | 5 | 40 | 39 |
 | gundam-wiki | [Mega Size Model](https://gundam.fandom.com/wiki/Mega_Size_Model) | 701883 | CC BY-SA 3.0 | 4 | 30 | 30 |
 | gundam-wiki | [Reborn-One Hundred](https://gundam.fandom.com/wiki/Reborn-One_Hundred) | 703703 | CC BY-SA 3.0 | 2 | 36 | 34 |
@@ -84,8 +94,8 @@ Generated 2026-10-19T23:00:24.010Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [1/100 High Grade Gundam Wing Model Series](https://gundam.fandom.com/wiki/1%2F100_High_Grade_Gundam_Wing_Model_Series) | 657338 | CC BY-SA 3.0 | 1 | 7 | 7 |
 | gundam-wiki | [1/100 High Grade Gundam X Model Series](https://gundam.fandom.com/wiki/1%2F100_High_Grade_Gundam_X_Model_Series) | 633340 | CC BY-SA 3.0 | 1 | 9 | 8 |
 | gundam-wiki | [1/100 High Grade Victory Gundam Model Series](https://gundam.fandom.com/wiki/1%2F100_High_Grade_Victory_Gundam_Model_Series) | 703704 | CC BY-SA 3.0 | 3 | 7 | 7 |
-| gundam-wiki | [SD Gundam BB Senshi](https://gundam.fandom.com/wiki/SD_Gundam_BB_Senshi) | 684682 | CC BY-SA 3.0 | 55 | 482 | 158 |
-| gundam-wiki | [SD Gundam Cross Silhouette](https://gundam.fandom.com/wiki/SD_Gundam_Cross_Silhouette) | 665089 | CC BY-SA 3.0 | 10 | 47 | 35 |
+| gundam-wiki | [SD Gundam BB Senshi](https://gundam.fandom.com/wiki/SD_Gundam_BB_Senshi) | 684682 | CC BY-SA 3.0 | 55 | 482 | 187 |
+| gundam-wiki | [SD Gundam Cross Silhouette](https://gundam.fandom.com/wiki/SD_Gundam_Cross_Silhouette) | 665089 | CC BY-SA 3.0 | 10 | 47 | 37 |
 | gundam-wiki | [SD Gundam EX-Standard](https://gundam.fandom.com/wiki/SD_Gundam_EX-Standard) | 665599 | CC BY-SA 3.0 | 3 | 32 | 31 |
 | gundam-wiki | [SD Gundam G Generation Model Series](https://gundam.fandom.com/wiki/SD_Gundam_G_Generation_Model_Series) | 687766 | CC BY-SA 3.0 | 4 | 66 | 63 |
 | gundam-wiki | [Mobile Suit Gundam Model Series](https://gundam.fandom.com/wiki/Mobile_Suit_Gundam_Model_Series) | 687765 | CC BY-SA 3.0 | 3 | 58 | 57 |
@@ -111,17 +121,17 @@ Generated 2026-10-19T23:00:24.010Z by `npm run ingest`. Do not edit by hand.
 | ja-wikipedia | [マスターグレード](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111191810 | CC BY-SA 4.0 | 11 | 275 | 0 |
 | ja-wikipedia | [リアルグレード](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780725 | CC BY-SA 4.0 | 10 | 202 | 0 |
 | ja-wikipedia | [パーフェクトグレード](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780932 | CC BY-SA 4.0 | 1 | 22 | 0 |
-| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1184 kit pages (938 with JAN) | 610 merged into list rows · 282 standalone · 22 ambiguous + 13 contested kept separate |
+| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1184 kit pages (938 with JAN) | 611 merged into list rows · 290 standalone · 22 ambiguous + 13 contested kept separate |
 | gundam-wiki | {{merch}} entries on the list pages above | per page | CC BY-SA 3.0 | — | 51 kit rows (46 with JAN) | 3 joined to table rows · 46 standalone · 0 ambiguous · 2 no suit |
-| gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1896 Gundam products | 732 matched |
+| gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1896 Gundam products | 736 matched |
 
-## JAN by source (771 releases)
+## JAN by source (779 releases)
 
 A release carries a JAN only when every source record that speaks about it states the same code and no other record uses that code for another kit.
 
 | Stated by | Releases |
 |---|---|
-| Gunpla Wiki kit page only | 727 |
+| Gunpla Wiki kit page only | 735 |
 | both, agreeing | 29 |
 | Gundam Wiki {{merch}} entry only | 15 |
 
@@ -129,7 +139,7 @@ Key-table records by source and status:
 
 | Source | attached | standalone | ambiguous | no-suit | no-date | disputed |
 |---|---|---|---|---|---|---|
-| gunpla-wiki | 564 | 192 | 0 | 91 | 68 | 23 |
+| gunpla-wiki | 565 | 199 | 0 | 83 | 68 | 23 |
 | gundam-wiki | 2 | 42 | 0 | 0 | 0 | 2 |
 
 ## Kit-page merges settled by stronger evidence (10)
@@ -183,52 +193,133 @@ List-table rows folded into the standalone record for the same product (same man
 - RG 09: Gundam Wiki 2012-07 vs ja-wikipedia 2012-05
 - PG 07: Gundam Wiki 2002-07 vs ja-wikipedia 2001-11
 
-## Suit pages without a timeline (25)
+## Station placement
+
+Each suit sits at the station of the series most of its kits come from (`data/series.ts`); multi-station series use the in-universe debut year to choose. Without series data the debut year decides; with neither, the suit is marked undated.
+
+| Method | Suits |
+|---|---|
+| series | 942 |
+| debut year | 75 |
+| parent (variant) | 0 |
+| undated (no evidence) | 11 |
+
+Undated suits (shown on their timeline's first station with an *undated* marker):
+
+- RX-78GP02A Gundam GP02A (Type-MLRS) → UC 0079
+- RB-79 Ball (Thunderbolt Ver.) → UC 0079
+- GGF-001 Phoenix Gundam → SD
+- Tornado Gundam → UC 0079
+- Magella Attack → UC 0079
+- EMS-05 Agg → UC 0079
+- MS-07H Gouf Flight Test Type → UC 0079
+- F-50D Guntank R-44 → UC 0079
+- ZM-S06S Zoloat → UC 0079
+- ZM-S19S Shy-Tarn → UC 0079
+- FD-03-13 Gustav Karl Type-13 → UC 0079
+
+Placed by debut year only (no mapped series among their kits):
+
+- MSN-02 Perfect Zeong → UC 0079 (debut 0079)
+- MSZ-006-3 Zeta Gundam III → UC 0087 (debut 0087)
+- MSZ-006-3B Zeta Gundam III B Type → UC 0087 (debut 0087)
+- MSZ-006-P2/3C Zeta Gundam III P2 Type → UC 0087 (debut 0087)
+- GAT-X105+AQM/E-X04 Gunbarrel Strike Gundam → CE 71 (debut 71)
+- RGM-79FP GM Striker → UC 0079 (debut 0079)
+- FA-78-3 Full Armor 7th Gundam → UC 0079 (debut 0081)
+- RGM-79 GM (Thunderbolt Ver.) → UC 0079 (debut 0079)
+- MS-05 Zaku I (Thunderbolt Ver.) → UC 0079 (debut 0079)
+- RX-78AL Atlas Gundam → UC 0079 (debut August, 0080)
+- MS-07H-8 Gouf Flight Type → UC 0079 (debut 0079)
+- OZ-15AGX Hydra Gundam → AC 195 (debut November 25, 195)
+- GN-006/SA Cherudim Gundam SAGA → AD 2312 (debut 2312)
+- GT-9600-D Gundam Leopard Destroy → AW 15 (debut August, 0015)
+- ZM-S06G Zollidia → UC 0153 (debut 0153)
+- LM314V24 Victory 2 Assault Gundam → UC 0153 (debut 0153)
+- RX-93 (TYPE-M) Musha ν Gundam → UC 0093 (debut 0095)
+- LRX-077 Sisquiede → UC 0087 (debut 0087)
+- MS-08TX Efreet → UC 0079 (debut 0079)
+- ORX-012 Gundam Mk-IV → UC 0087 (debut 0087)
+- OZ-14MS Gundam Aquarius → AC 195 (debut 195)
+- Musai-class → UC 0079 (debut July, 0075)
+- SCV-70 White Base → UC 0079 (debut July, 0079)
+- MA-05 Bigro → UC 0079 (debut 0079)
+- MAM-07 Grublo → UC 0079 (debut 0079)
+- Dodai YS → UC 0079 (debut 0079)
+- Gaw → UC 0079 (debut 0079)
+- MAX-03 Adzam → UC 0079 (debut 0079)
+- MA-04X Zakrello → UC 0079 (debut 0079)
+- MAN-03 Braw Bro → UC 0079 (debut December, 0079)
+- MSM-04N Agguguy → UC 0079 (debut 0079)
+- FF-X7-Bst Core Booster → UC 0079 (debut 0079)
+- YMS-09 Prototype Dom → UC 0079 (debut 0079)
+- MS-06D Zaku Desert Type → UC 0079 (debut 0079)
+- MS-06M Zaku Marine Type → UC 0079 (debut 0079)
+- MS-06E Zaku Reconnaissance Type → UC 0079 (debut 0079)
+- YMS-09D Dom Tropical Test Type → UC 0079 (debut 0079)
+- MS-06E-3 Zaku Flipper → UC 0079 (debut 0079)
+- MSN-01 High Mobility Psycommu System Zaku → UC 0079 (debut December 31, 0079)
+- RX-77-4 Guncannon II → UC 0079 (debut 0079)
+- MS-06Z Psycommu System Zaku → UC 0079 (debut 0079)
+- Argama-class → UC 0087 (debut March, 0087)
+- RX-160 Byarlant → UC 0087 (debut November 3, 0087)
+- AMX-006 Gaza-D → UC 0088 (debut 0088)
+- AMX-104 R-Jarja → UC 0088 (debut 0088)
+- AMX-008 Ga-Zowmn → UC 0088 (debut 0088)
+- MS-06D Desert Zaku → UC 0088 (debut 0088)
+- AMX-117R Gaz-R → UC 0088 (debut 0088)
+- AMA-01X Jamru Fin → UC 0088 (debut 0088)
+- MSA-0011［Bst］ S Gundam Booster Unit Type → UC 0088 (debut March, 0088)
+- F90V Gundam F90 VSBR Type → UC 0111 (debut February, 0112)
+- F90II-L Gundam F90II Long Range Type → UC 0111 (debut 0116)
+- F71 G-Cannon → UC 0111 (debut April, 0115)
+- XM-05 Berga Giros → UC 0123 (debut 0123)
+- XM-06 Dahgi Iris → UC 0123 (debut 0123)
+- RGM-109 Heavygun → UC 0105 (debut 0109)
+- RGM-111 Hardygun → UC 0111 (debut 0121)
+- RXF-91 Silhouette Gundam → UC 0111 (debut August, 0122)
+- F71B G-Cannon Magna → UC 0123 (debut 0123)
+- RX-99 Neo Gundam → UC 0123 (debut 0123)
+- RXF-91A Silhouette Gundam Kai → UC 0123 (debut February, 0123)
+- RGM-119 Jamesgun → UC 0111 (debut 0119)
+- ZM-S09G Tomliat → UC 0153 (debut 0153)
+- RGM-122 Javelin → UC 0133 (debut 133)
+- ZM-S14S Contio → UC 0153 (debut 0153)
+- ZM-D11S Abigor → UC 0153 (debut 0153)
+- ZM-S22S Rig Shokew → UC 0153 (debut 0153)
+- GF13-009NF Gundam Rose → FC 60 (debut 59)
+- GF13-013NR Bolt Gundam → FC 60 (debut 60)
+- OZ-13MSX2 Mercurius → AC 195 (debut August 20, 195)
+- NRX-0013-CB Gundam Virsago Chest Break → AW 15 (debut September, 0015)
+- RX-80PR Pale Rider → UC 0079 (debut 0079)
+- RX-78(G)E Gundam EX → UC 0079 (debut November 7, 0079)
+- MS-06F Zaku II F Type → UC 0079 (debut 0079)
+- MSN-03-2 Psycho Doga → UC 0093 (debut 0093)
+
+## Suit pages without a timeline (7)
 
 Infobox `era` not recognised. Extend `ERA_TIMELINE` in discover.ts if these matter.
 
-- Musha Gundam: no timeline (era: Not Applicable/Specified)
-- Musha Gundam Mk-II: no timeline (era: Not Applicable/Specified)
-- F90IIIYX Cluster Gundam Xtra Type: no timeline (era: —)
-- RX-78F00/E Gundam: no timeline (era: Not Applicable/Specified)
-- Extreme Gundam: no timeline (era: Not Applicable/Specified)
-- GN-0000DVR/A Gundam 00 Diver Ace: no timeline (era: Not Applicable/Specified)
-- Machine Rider: no timeline (era: Not Applicable/Specified)
-- Knight Gundam: no timeline (era: Super Deformed)
-- Satan Gundam: no timeline (era: Super Deformed)
-- SDV-04 Command Gundam: no timeline (era: Super Deformed)
-- CAPG-78 Captain Gundam: no timeline (era: Super Deformed)
-- Kouki Gundam: no timeline (era: Super Deformed)
-- Musha Victory: no timeline (era: Super Deformed)
-- Musha Godmaru: no timeline (era: Super Deformed)
-- Devil Dragon Blade Zero Gundam: no timeline (era: Super Deformed)
-- Knight Unicorn Gundam: no timeline (era: Super Deformed)
-- Superior Dragon: no timeline (era: Super Deformed)
-- Musha Gundam Mk-III: no timeline (era: —)
-- GGF-001 Phoenix Gundam: no timeline (era: Super Deformed)
-- RX-78F00 Gundam: no timeline (era: Not Applicable/Specified)
-- Shin Musha Gundam: no timeline (era: —)
-- Extreme Gundam Type Leos: no timeline (era: Not Applicable/Specified)
-- EES-001 Gundam Zirius: no timeline (era: Constant Calendar)
-- ARK-10 Gundam Helix: no timeline (era: After Apocalypse)
-- XARX-0 Gundam ZERO: no timeline (era: After Apocalypse)
+- Extreme Gundam: no timeline (era: Not Applicable/Specified; series: Mobile Suit Gundam: Extreme Vs.)
+- GN-0000DVR/A Gundam 00 Diver Ace: no timeline (era: Not Applicable/Specified; series: —)
+- Machine Rider: no timeline (era: Not Applicable/Specified; series: —)
+- Extreme Gundam Type Leos: no timeline (era: Not Applicable/Specified; series: Mobile Suit Gundam Extreme VS)
+- EES-001 Gundam Zirius: no timeline (era: Constant Calendar; series: Mobile Suit Gundam Eight)
+- ARK-10 Gundam Helix: no timeline (era: After Apocalypse; series: Gundam Rogue Orbit)
+- XARX-0 Gundam ZERO: no timeline (era: After Apocalypse; series: Mobile Suit Gundam RG XARX-ZERO)
 
-## Kit rows not resolved to a suit (498)
+## Kit rows not resolved to a suit (459)
 
 Usually non-Gundam mecha, vehicles, or rows without a suit link. First 80:
 
 - Master Grade: [[RGM-79［G］ GM Ground Type|RGM-79[G] GM]]
 - Master Grade: [[MSA-0011［Ext］ Ex-S Gundam|MSA-0011[Ext] Ex-S Gundam]]
-- Master Grade: Shin Musha Gundam
-- Master Grade: Musha Gundam Mk-II
 - Master Grade: [[RGZ-95C ReZEL Type C (Defenser B-Unit) (GR)|RGZ-95C ReZEL Type C [Defenser B-Unit] [GR]]]
 - Master Grade: [[FA-78 Full Armor Gundam (Thunderbolt Ver.)|FA-78 Full Armor Gundam [Gundam Thunderbolt] "Ver.Ka"]]
 - Master Grade: [[MS-06R Zaku High Mobility Type (Reuse "P" Device)|MS-06R Zaku II High Mobility Type "Psycho Zaku" [Gundam Thunderbolt] "Ver.Ka"]]
 - Master Grade: [[MSA-0011［Bst］ S Gundam Booster Unit Type Plan 303E "Deep Striker"|MSA-0011[Bst] Plan303E Deep Striker]]
 - Master Grade: [[GNT-0000/FS 00 Qan［T］ Full Saber|GNT-0000/FS 00 Qan[T] Full Saber]]
-- Master Grade: Shin Musha Gundam Sengoku no Jin
 - Master Grade: [[GNT-0000 00 Qan［T］|GNT-0000 00 Qan[T] (Trans-Am Mode)]] [Special Coating]
-- Master Grade: Musha Gundam Mk-II Tokugawa Ieyasu Ver.
 - Master Grade: [[RX-0［N］ Unicorn Gundam 02 Banshee Norn|RX-0[N] Unicorn Gundam 02 Banshee Norn]]
 - Master Grade: [[MSA-0011［Bst］ S Gundam Booster Unit Type|MSA-0011[Bst] S Gundam Booster Unit Type]]
 - Master Grade: [[RX-0［N］ Unicorn Gundam 02 Banshee Norn|RX-0[N] Unicorn Gundam 02 Banshee Norn (Final Battle Ver.)]]
@@ -242,15 +333,12 @@ Usually non-Gundam mecha, vehicles, or rows without a suit link. First 80:
 - Master Grade: [[GNT-0000/FS 00 Qan［T］ Full Saber|GNT-0000/FS 00 Qan[T] Full Saber]] [Special Coating]
 - Master Grade: The Gundam Base Limited Catapult Base
 - Master Grade: [[RX-78TB-3［FA］ Gundam Stormbringer F.A.|RX-78TB-3[SB] Gundam Stormbringer F.A.]] / [[RGM-79TB-1［T］ GM Turbulence|RGM-79TB-1[T] GM Turbulence]]
-- Master Grade: Shin Musha Gundam Sengoku no Jin Kokui Ōyoroi
 - Master Grade: Gunner Wizard / Slash Wizard / Blaze Wizard Set
 - Master Grade: The Gundam Base Limited GBK-20 Gundam Astray [The Gundam Base Korea 20th Anniversary Memorial Ver.]
 - Master Grade: Eclipse Gundam Reactor 2
-- Master Grade: Musha Gundam Mk-II Tokugawa Ieyasu Nanban-Dogusoku Ver.
 - Master Grade: [[RX-78TB-4［PF］ Gundam Stormbringer P.F.|RX-78TB-4[PF] Gundam Stormbringer P.F.]]
 - Master Grade: Riko's Zaku (Plastic Model and RIKO Ver.)
 - Master Grade: RX-78FRMGT Gundam
-- Master Grade: Mission Pack X-Type for F90IIIY Cluster Gundam
 - Master Grade: Astray Gundam [Cross Contrast Colors/Charcoal Black Color]
 - Master Grade: Astray Gundam [Cross Contrast Colors/Blossom White Color]
 - Real Grade: [[RX-0［N］ Unicorn Gundam 02 Banshee Norn|RX-0[N] Unicorn Gundam 02 Banshee Norn]]
@@ -268,7 +356,6 @@ Usually non-Gundam mecha, vehicles, or rows without a suit link. First 80:
 - Real Grade: [[RX-0［N］ Unicorn Gundam 02 Banshee Norn|RX-0[N] Unicorn Gundam 02 Banshee Norn (Final Battle Ver.)]] [Special Coating]
 - Real Grade: [[RX-0［N］ Unicorn Gundam 02 Banshee Norn|RX-0[N] Unicorn Gundam 02 Banshee Norn]] [Rindo Chihaya Ver.]
 - Perfect Grade: 00 Raiser Color Clear Body
-- Entry Grade: RX-78F00/E Gundam
 - Entry Grade: [[RX-78-2［US］ Gundam (American Type)|RX-78-2[US] Gundam (American Type)]]
 - First Grade: Bandai Museum Limited First Grade 3-Pack Metallic Edition
 - Reborn-One Hundred: [[MS-08TX［EXAM］Efreet Custom|MS-08TX[EXAM] Efreet Custom]]
@@ -297,6 +384,14 @@ Usually non-Gundam mecha, vehicles, or rows without a suit link. First 80:
 - High Grade Gundam The Origin: [[RX-78-01［FSD］Gundam FSD|RX-78-01[FSD] Gundam FSD]]
 - High Grade Gundam The Origin: [[RX-78［N］ Gundam Local Type|RX-78-01[N] Gundam Local Type (Rollout Color)]]
 - High Grade Gundam The Origin: Long Range Beam Rifle [Prototype]
+- High Grade Gundam The Origin: Light Liner
+- High Grade Gundam Thunderbolt: [[RX-79［GS］ Gundam Ground Type S|RX-79[GS] Gundam Ground Type-S]] (GUNDAM THUNDERBOLT Ver.)
+- High Grade Mobile Suit Gundam: The 08th MS Team: [[RGM-79［G］ GM Ground Type|RGM-79[G] GM]]
+- High Grade Mobile Suit Gundam: The 08th MS Team: [[RX-79［G］Ez-8 Gundam Ez8|RX-79[G]Ez-8 Gundam Ez8]]
+- High Grade Mobile Suit Gundam: The 08th MS Team: [[RGM-79［G］ GM Sniper|RGM-79[G] GM Sniper]]
+- High Grade Mobile Suit Gundam: The 08th MS Team: [[RGM-79［G］ GM Ground Type|RGM-79[G] GM]] (Chrome Metallic Ver.)
+- High Grade Ver.G30th: Gunpla Starter Set Vol. 2
+- High Grade Build Fighters: Gundam Ez-SR
 
 ## Disputed JANs (25)
 
@@ -328,7 +423,7 @@ The same barcode is published for more than one kit (on Gunpla Wiki kit pages or
 - `4573102629449` High Grade the Witch from Mercury: Gundam Lfrith ↔ High Grade Gundam The Origin: RCX-76-01 Guncannon Mobility Test Type/Firepower Test Type
 - `4573102629449` High Grade Gundam The Origin: RCX-76-01 Guncannon Mobility Test Type/Firepower Test Type ↔ HGTWFM XGF-02 Gundam Lfrith; High Grade the Witch from Mercury: Gundam Lfrith
 
-## Gunpla Wiki kit pages without a resolvable suit (124)
+## Gunpla Wiki kit pages without a resolvable suit (115)
 
 First 60.
 
@@ -346,7 +441,6 @@ First 60.
 - HG00 GN-003 Gundam Kyrios (Bombardment Equipment) (model of: —)
 - HGBC Jigen Build Knuckles 'Kaku' (model of: —)
 - HGBC Jigen Build Knuckles (Round) (model of: —)
-- MG Shin Musha Gundam (model of: Shin Musha Gundam)
 - BB Senshi Ryubi Gundam (model of: Ryubi Gundam)
 - HGBC Kurenai Weapon (model of: —)
 - Mechanic Collection Getter 1 (model of: —)
@@ -366,7 +460,6 @@ First 60.
 - EG (2020) Kamen Rider Saber Brave Dragon (model of: —)
 - RG GN-0000GNHW/7SGD2 00 Gundam Seven Sword/G Inspection (model of: RG GN-0000/7S 00 Gundam Seven Sword)
 - EG (2020) Izuku Midoriya (model of: —)
-- 1/144 RX-78F00 Gundam & G-Dock (model of: RX-78F00 Gundam)
 - HG Extreme Gundam (Type Leos) (model of: Extreme Gundam Type Leos)
 - MG AGE-1 Gundam AGE-1F/2 (model of: —)
 - 1/144 Long Rifle for HGUC Moon Gundam (model of: —)
@@ -382,7 +475,6 @@ First 60.
 - Mechanic Collection Double Mazinger (model of: —)
 - HGCE MHF-01Ω Load Astray Ω (model of: Load Astray Ω)
 - HGBC Build Booster Mk-II (model of: —)
-- 1/48 RX-78F00 Gundam (Bust Model) (model of: RX-78F00 Gundam)
 - HG Alteisen (model of: —)
 - HG Alteisen Nacht (model of: —)
 - MG Figure-rise Kamen Rider 1 (model of: —)
@@ -392,8 +484,11 @@ First 60.
 - HGCDI RX-77-02 Guncannon (Cucuruz Doan's Island Ver.) (model of: RX-77-02 Guncannon/Origin;RX-77 Guncannon)
 - HGTWFM Mirasoul Flight Unit (model of: —)
 - HG Huckebein Mk-II (model of: —)
+- HG Gespenst (model of: —)
+- HG Gespenst Mk-II (model of: —)
+- HG Cybuster (model of: —)
 
-## gunpla.fyi products not matched (1164)
+## gunpla.fyi products not matched (1160)
 
 First 80. Kits on pages not yet ingested, or names too different to match safely.
 

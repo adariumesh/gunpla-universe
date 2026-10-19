@@ -12,7 +12,7 @@ import { z } from "zod";
  */
 
 export const TimelineId = z.enum([
-  "UC", "RC", "FC", "AC", "AD00", "CE", "BUILD", "AW", "AG", "PD", "AS", "CC",
+  "UC", "RC", "FC", "AC", "AD00", "CE", "BUILD", "AW", "AG", "PD", "AS", "CC", "SD",
 ]);
 export type TimelineId = z.infer<typeof TimelineId>;
 
@@ -90,6 +90,8 @@ export const MobileSuit = z.object({
   kanji: string().optional(),
   /** Gundam Wiki page the suit was discovered from */
   wikiTitle: string().optional(),
+  /** why the suit sits on its station: its kits' series, its in-universe debut year, or nothing (undated) */
+  placement: z.object({ by: z.enum(["series", "year", "parent", "none"]), evidence: z.string() }).optional(),
 });
 export type MobileSuit = z.infer<typeof MobileSuit>;
 
@@ -174,6 +176,8 @@ export const IngestedRelease = z.object({
   yen: z.number().int().positive().optional(),
   notes: z.string().optional(),
   section: z.string(),
+  /** the anime/OVA/manga this kit is from, as the source names it */
+  series: z.string().optional(),
   extras: z.record(z.string(), z.string()).default({}),
   source: SourceRef,
   /** independent sources that agree / disagree on the release date */

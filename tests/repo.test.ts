@@ -110,15 +110,43 @@ describe("getKit", () => {
 describe("all timelines", () => {
   it("opens a station on every timeline that has kits", () => {
     const open = new Set(db.eras.filter((e) => e.available).map((e) => e.timelineId));
-    for (const t of ["UC", "FC", "AC", "AW", "AG", "AD00", "CE", "BUILD", "PD", "AS", "RC", "CC"]) expect(open.has(t as never)).toBe(true);
+    for (const t of ["UC", "FC", "AC", "AW", "AG", "AD00", "CE", "BUILD", "PD", "AS", "RC", "CC", "SD"]) expect(open.has(t as never)).toBe(true);
   });
 
-  it("places suits by their wiki infobox, including same-number pages from other continuities", () => {
-    const suit = (id: string) => db.suits.find((s) => s.id === id);
-    expect(suit("gat-x105")?.debutEraId).toBe("ce-71");
-    expect(suit("gn-001")?.debutEraId).toBe("ad-2307");
-    expect(suit("xvx-016")?.debutEraId).toBe("as-109");
-    expect(suit("msz-006")?.debutEraId).toBe("uc-0087-gryps");
+  it("places suits at the station of their series, including newly added stations", () => {
+    const at: [string, string][] = [
+      ["gat-x105", "ce-71"],
+      ["stts-909", "ce-75"], // Rising Freedom: SEED FREEDOM, not CE 71
+      ["zgmf-x19a", "ce-73"], // ∞ Justice: had no debut date, was on CE 71
+      ["gn-001", "ad-2307"],
+      ["gn-0000-gnr-010-00-raiser", "ad-2312"],
+      ["msz-006", "uc-0087-gryps"],
+      ["rx-178", "uc-0087-gryps"], // infobox says built 0086; Zeta is set in 0087
+      ["f91", "uc-0123-cosmo"], // infobox says built 0116; the film is set in 0123
+      ["f90", "uc-0111-formula"],
+      ["xm-x1", "uc-0133-crossbone"],
+      ["rx-0", "uc-0096-laplace"],
+      ["gms-gquuuuuux", "uc-0085-gquuuuuux"],
+      ["age-3", "ag-164"],
+      ["asw-g-08-gundam-barbatos-lupu-3", "pd-325"],
+      ["xgf-02", "as-109"],
+      ["xvx-016", "as-122"],
+      ["knight-gundam", "sd-gaiden"],
+    ];
+    for (const [id, era] of at) expect([id, db.suits.find((s) => s.id === id)?.debutEraId]).toEqual([id, era]);
+  });
+
+  it("never places a suit by default without saying so", () => {
+    const undated = db.suits.filter((s) => s.placement?.by === "none");
+    expect(undated.length).toBeLessThan(25);
+    for (const s of db.suits) expect(s.placement).toBeDefined();
+  });
+
+  it("puts year-placed suits on a station at or before their debut, on the right timeline", () => {
+    for (const s of db.suits.filter((x) => x.placement?.by === "series")) {
+      const era = db.eras.find((e) => e.id === s.debutEraId)!;
+      expect(era.available).toBe(true);
+    }
   });
 
   it("takes the first unqualified infobox operator as faction", () => {

@@ -10,13 +10,13 @@ Every value in the catalog comes from a cited open source. Nothing is estimated 
 
 | | |
 |---|---|
-| Timelines | 12 (UC, FC, AC, AW, AG, AD 00, CE, PD, AS, RC, CC, Build), 29 stations, all open |
-| Mobile suits | 1,010, placed automatically from Gundam Wiki |
-| Kits | 3,333 (1,986 standard releases, the rest recolors and limited editions) |
+| Timelines | 13 (UC, FC, AC, AW, AG, AD 00, CE, PD, AS, RC, CC, Build, SD World), 39 stations, all open |
+| Mobile suits | 1,028, discovered from Gundam Wiki; 93% placed by the series their kits come from |
+| Kits | 3,380 (2,013 standard releases, the rest recolors and limited editions) |
 | Release date | 100% of kits (25% to the exact day) |
 | Bandai list price | 91% |
-| JAN barcode | 771 kits (23%), every one checked against its source page |
-| Bandai item code | 733 kits (22%), with a link to the official instruction manual |
+| JAN barcode | 779 kits (23%), every one checked against its source page |
+| Bandai item code | 736 kits (22%), with a link to the official instruction manual |
 | Materials / glue (incl. ABS warnings) | 27% |
 
 ## The three sheets
@@ -34,7 +34,7 @@ Requires Node 20+.
 ```bash
 npm install
 npm run dev              # http://localhost:3000
-npm test                 # 26 tests
+npm test                 # 28 tests
 npm run validate:data    # schema, integrity, JAN provenance audit
 npm run build:pages      # static site in out/, as deployed
 ```
@@ -56,6 +56,7 @@ npm run build:pages      # static site in out/, as deployed
 - Records from different sources are merged only on an unambiguous match (same suit and grade, plus the same line number, the same manual ID, or the only release that month). Uncertain records stay separate.
 - A JAN published for two different kits is marked *disputed* and kept out (25 today; listed in the report).
 - Kits are keyed by **Bandai item code**, then **JAN**, then a stable source-derived ID.
+- Suits are placed on the station of the **series** most of their kits come from (`data/series.ts`), using the in-universe debut year only to choose within multi-station series or when no series is known. Suits with neither are marked *undated* rather than guessed (12 today).
 - Sites that refuse automated access (Bandai Hobby, HobbySearch, Surugaya, Modelverse, Reddit) are never scraped. They appear only as links.
 
 ## Deployment

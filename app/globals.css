@@ -34,6 +34,7 @@
   --strand-pd: oklch(0.52 0.06 280);
   --strand-as: oklch(0.6 0.13 0);
   --strand-cc: oklch(0.55 0.16 310);
+  --strand-sd: oklch(0.6 0.15 75);
 
   --grade-vintage: oklch(0.55 0.06 60);
   --grade-hg: oklch(0.55 0.15 150);
@@ -73,6 +74,7 @@
     --strand-pd: oklch(0.7 0.06 280);
     --strand-as: oklch(0.8 0.1 0);
     --strand-cc: oklch(0.75 0.15 310);
+    --strand-sd: oklch(0.82 0.14 80);
 
     --grade-vintage: oklch(0.75 0.07 60);
     --grade-hg: oklch(0.78 0.15 150);
@@ -112,6 +114,7 @@
   --strand-pd: oklch(0.7 0.06 280);
   --strand-as: oklch(0.8 0.1 0);
   --strand-cc: oklch(0.75 0.15 310);
+  --strand-sd: oklch(0.82 0.14 80);
 
   --grade-vintage: oklch(0.75 0.07 60);
   --grade-hg: oklch(0.78 0.15 150);

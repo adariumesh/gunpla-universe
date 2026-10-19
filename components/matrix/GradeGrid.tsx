@@ -206,6 +206,14 @@ function SuitHeader({
             </Link>
           )}
           {col.role === "main" && <span className="rounded-sm border border-rule px-1">carry-over</span>}
+          {s.placement?.by === "none" && (
+            <span
+              className="rounded-sm border border-dashed border-warn px-1 text-warn"
+              title="No source states this suit's series or in-universe debut, so it is shown on its timeline's first station."
+            >
+              undated
+            </span>
+          )}
           {s.continuity !== "main" && <span className="rounded-sm border border-rule px-1">{s.continuity}</span>}
           {hasVariants && (col.hiddenVariants > 0 || expanded) && (
             <button

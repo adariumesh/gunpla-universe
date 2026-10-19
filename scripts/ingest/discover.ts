@@ -128,6 +128,7 @@ const ERA_TIMELINE: [RegExp, TimelineId][] = [
   [/post disaster/i, "PD"],
   [/ad stella/i, "AS"],
   [/correct century/i, "CC"],
+  [/super deformed/i, "SD"],
   [/build|gunpla battle|gbn|metaverse|breaker|real world/i, "BUILD"],
   [/anno domini/i, "AD00"],
 ];
