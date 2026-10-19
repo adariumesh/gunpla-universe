@@ -329,7 +329,7 @@ function TitleBlock({ opacity }: { opacity: number }) {
   const y = 92;
   const w = 350;
   return (
-    <g opacity={opacity} aria-hidden>
+    <g opacity={opacity}>
       <rect x={x} y={y} width={w} height={262} fill="var(--panel)" stroke="var(--ink)" strokeWidth={2} />
       <line x1={x} y1={y + 150} x2={x + w} y2={y + 150} stroke="var(--ink)" strokeWidth={1.5} />
       <line x1={x} y1={y + 192} x2={x + w} y2={y + 192} stroke="var(--rule)" />
@@ -356,14 +356,18 @@ function TitleBlock({ opacity }: { opacity: number }) {
           </text>
         </g>
       ))}
-      <text x={x + 12} y={y + 250} fontSize={12.5} fill="var(--ink-2)">
-        Click any station dot for sheet 2 (its kit grid)
+      {/* Sheet 2 is any era's kit grid: offer a direct way in, not just a hint. */}
+      <a href={withBase("/era/uc-0079-oyw/")} className="sheet-link">
+        <rect x={x + 8} y={y + 234} width={w - 16} height={22} rx={3} fill="var(--accent)" />
+        <text x={x + w / 2} y={y + 249} textAnchor="middle" fontSize={12.5} fontWeight={600} fill="var(--paper)" className="font-mono">
+          {"GO TO SHEET 2 → UC 0079 KIT GRID"}
+        </text>
+      </a>
+      <text x={x} y={y + 282} fontSize={12.5} fill="var(--ink-2)">
+        Or click any station dot for its kit grid (sheet 2),
       </text>
-      <text x={x} y={y + 290} fontSize={12} fill="var(--ink-3)" className="font-mono">
-        {"Sheet 2: suits × grades  ·  Sheet 3: click a kit"}
-      </text>
-      <text x={x} y={y + 308} fontSize={12} fill="var(--ink-3)" className="font-mono">
-        {"▮ kits per suit (n = total)"}
+      <text x={x} y={y + 300} fontSize={12.5} fill="var(--ink-2)">
+        then click a kit for its details (sheet 3).
       </text>
     </g>
   );

@@ -251,3 +251,8 @@ body {
 .ghost::after {
   content: attr(data-label);
 }
+
+.sheet-link:hover rect,
+.sheet-link:focus-visible rect {
+  fill: var(--ink);
+}
