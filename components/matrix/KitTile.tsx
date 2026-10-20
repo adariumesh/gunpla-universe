@@ -4,7 +4,8 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { Glyph, GradeChip } from "@/components/Glyph";
-import { GRADE_ROW_LABEL, type GradeRow, type TileCard } from "@/lib/repo";
+import { GRADE_ROW_LABEL, type GradeRow } from "@/lib/labels";
+import type { TileCard } from "@/lib/repo";
 
 const yen = (n: number | null) => (n === null ? "¥ —" : `¥${n.toLocaleString("en-US")}`);
 

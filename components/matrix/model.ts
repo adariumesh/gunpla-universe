@@ -1,4 +1,5 @@
-import { GRADE_ROWS, type EraMatrix, type GradeRow, type TileCard, type SuitColumn } from "@/lib/repo";
+import { GRADE_ROWS, type GradeRow } from "@/lib/labels";
+import type { EraMatrix, SuitColumn, TileCard } from "@/lib/repo";
 
 export type Filters = {
   rows: Set<GradeRow>;

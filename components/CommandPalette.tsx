@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { SearchEntry } from "@/lib/repo";
 import { OPEN_PALETTE_EVENT } from "./TopControls";
-import { withBase } from "@/lib/basePath";
 
 /** Search index (~4k suits and kits) is fetched on first open, not shipped with every page. */
 export function CommandPalette() {
@@ -35,7 +34,7 @@ export function CommandPalette() {
 
   useEffect(() => {
     if (open && !entries.length)
-      fetch(withBase("/api/search"))
+      fetch("/api/search")
         .then((r) => r.json())
         .then(setEntries)
         .catch(() => {});
