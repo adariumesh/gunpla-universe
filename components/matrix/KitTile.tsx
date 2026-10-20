@@ -14,16 +14,16 @@ export function ArtPlate({ card, big = false }: { card: TileCard; big?: boolean 
   const headline = card.mold.versionLabel ?? card.mold.line ?? (card.row === "OTHER" ? card.mold.grade : card.mold.scale);
   return (
     <div
-      className={`hatch relative flex flex-col justify-end overflow-hidden rounded-sm border-l-4 bg-paper-2 px-2 ${big ? "h-28 py-3" : "h-12 py-1"}`}
+      className={`hatch relative flex flex-col justify-end overflow-hidden rounded-sm border-l-4 bg-paper-2 px-2 ${big ? "h-28 py-3" : "h-14 py-1.5"}`}
       style={{ borderColor: `var(--grade-${token})` }}
       aria-hidden
     >
       <span className={`font-display font-bold leading-none text-ink ${big ? "text-4xl" : "text-lg"}`}>{headline}</span>
-      <span className={`font-mono text-ink-3 ${big ? "mt-1 text-xs" : "text-[9px]"}`}>
+      <span className={`font-mono text-ink-3 ${big ? "mt-1 text-xs" : "text-[0.6875rem]"}`}>
         {card.mold.scale} · {card.mold.subjects[0].suitId.toUpperCase()}
       </span>
       {card.sku.edition !== "standard" && (
-        <span className="absolute right-1.5 top-1.5 rounded-sm bg-accent px-1 font-mono text-[8px] uppercase text-paper">
+        <span className="absolute right-1.5 top-1.5 rounded-sm bg-accent px-1 font-mono text-[0.625rem] uppercase text-paper">
           {card.sku.edition.replace("-", " ")}
         </span>
       )}
@@ -37,17 +37,17 @@ export function KitTile({ card, layout = true }: { card: TileCard; layout?: bool
       <Link
         href={{ query: { kit: card.sku.id } }}
         scroll={false}
-        className="group relative block overflow-hidden rounded-md border border-rule bg-panel p-2 shadow-[0_1px_0_var(--rule)] transition-colors hover:border-accent focus-visible:border-accent"
+        className="group relative block overflow-hidden rounded-md border border-rule bg-panel p-2.5 shadow-[0_1px_0_var(--rule)] transition-colors hover:border-accent focus-visible:border-accent"
       >
         <div className="mb-1.5 flex items-center gap-1.5">
           <GradeChip grade={card.mold.grade} />
-          <span className="font-mono text-[10px] text-ink-3">{card.mold.scale}</span>
-          <span className="ml-auto font-mono text-[11px] font-medium text-ink-2">{card.year}</span>
+          <span className="font-mono text-[0.6875rem] text-ink-3">{card.mold.scale}</span>
+          <span className="ml-auto font-mono text-xs font-medium text-ink-2">{card.year}</span>
         </div>
         <ArtPlate card={card} />
-        <p className="mt-1.5 line-clamp-2 min-h-[2.4em] text-[12px] leading-tight text-ink">{card.sku.name}</p>
+        <p className="mt-1.5 line-clamp-2 min-h-[2.4em] text-[0.8125rem] leading-tight text-ink">{card.sku.name}</p>
         <div className="mt-1.5 flex items-center justify-between">
-          <span className="font-mono text-[10px] text-ink-3">{card.sku.bandaiItemCode ? `#${card.sku.bandaiItemCode}` : "\u00A0"}</span>
+          <span className="font-mono text-[0.6875rem] text-ink-3">{card.sku.bandaiItemCode ? `#${card.sku.bandaiItemCode}` : "\u00A0"}</span>
           <span className="flex gap-1">
             {card.glyphs.slice(0, 4).map((g) => (
               <Glyph key={g} id={g} size={12} />
@@ -55,7 +55,7 @@ export function KitTile({ card, layout = true }: { card: TileCard; layout?: bool
           </span>
         </div>
         {/* hover/focus peek */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full bg-ink px-2 py-1 font-mono text-[10px] text-paper transition-transform group-hover:translate-y-0 group-focus-visible:translate-y-0">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full bg-ink px-2 py-1 font-mono text-[0.6875rem] text-paper transition-transform group-hover:translate-y-0 group-focus-visible:translate-y-0">
           {yen(card.latestYen)}{card.sku.jan ? ` · JAN ${card.sku.jan}` : ""}
         </div>
       </Link>
@@ -113,7 +113,7 @@ export function KitStack({
           onClick={onToggle}
           aria-expanded={expanded}
           aria-label={expanded ? "Collapse stack" : `Spread ${n} kits`}
-          className="absolute -right-2 -top-2 z-10 flex items-center gap-0.5 rounded-full border border-rule bg-ink px-1.5 py-0.5 font-mono text-[10px] font-medium text-paper hover:bg-accent"
+          className="absolute -right-2 -top-2 z-10 flex items-center gap-0.5 rounded-full border border-rule bg-ink px-1.5 py-0.5 font-mono text-[0.6875rem] font-medium text-paper hover:bg-accent"
         >
           ×{n}
           {expanded ? <ChevronUp size={10} /> : <ChevronDown size={10} />}

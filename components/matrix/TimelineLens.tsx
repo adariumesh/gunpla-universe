@@ -37,7 +37,7 @@ export function TimelineLens({
         <div className="sticky left-0 z-30 shrink-0 bg-paper" style={{ width: LABEL_W }} />
         <div className="relative h-8 border-b border-rule" style={{ width }}>
           {ticks.map((t) => (
-            <span key={t} className="absolute bottom-1 -translate-x-1/2 font-mono text-[11px] text-ink-3" style={{ left: xOf(t) + PX_PER_YEAR / 2 }}>
+            <span key={t} className="absolute bottom-1 -translate-x-1/2 font-mono text-xs text-ink-3" style={{ left: xOf(t) + PX_PER_YEAR / 2 }}>
               {t}
             </span>
           ))}
@@ -46,7 +46,7 @@ export function TimelineLens({
 
       {bands.map((b) => (
         <div key={b.faction}>
-          <div className="sticky left-0 z-10 w-max bg-paper px-0 pb-1 pt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-3">{b.faction}</div>
+          <div className="sticky left-0 z-10 w-max bg-paper px-0 pb-1 pt-4 font-mono text-xs uppercase tracking-[0.2em] text-ink-3">{b.faction}</div>
           {b.columns.map((c) => {
             const cards = rows.flatMap((r) => c.cellsFiltered[r]).sort((a, z) => a.year - z.year);
             // Greedy lane packing so chips never overlap, even across adjacent years.
@@ -63,7 +63,7 @@ export function TimelineLens({
             return (
               <div key={c.suit.id} role="row" className={`flex border-t border-rule ${c.role === "cameo" ? "opacity-60" : ""}`}>
                 <div role="rowheader" className="sticky left-0 z-10 shrink-0 bg-paper py-2 pr-3" style={{ width: LABEL_W }}>
-                  <p className="font-mono text-[10px] text-ink-3">{c.suit.name.toUpperCase().startsWith(c.suit.modelNumber.toUpperCase()) ? "\u00A0" : c.suit.modelNumber}</p>
+                  <p className="font-mono text-[0.6875rem] text-ink-3">{c.suit.name.toUpperCase().startsWith(c.suit.modelNumber.toUpperCase()) ? "\u00A0" : c.suit.modelNumber}</p>
                   <p className="truncate font-display text-base font-bold leading-tight">
                     {c.parentId && <span className="text-ink-3">↳ </span>}
                     {c.suit.name}
@@ -99,7 +99,7 @@ function Chip({ card, left, top }: { card: TileCard; left: number; top: number }
         href={{ query: { kit: card.sku.id } }}
         scroll={false}
         title={`${card.sku.name} (${card.year})`}
-        className="flex items-center rounded-sm px-1 font-mono text-[10px] font-medium leading-none text-white shadow-sm ring-offset-1 ring-offset-paper hover:ring-2 hover:ring-accent"
+        className="flex items-center rounded-sm px-1 font-mono text-[0.6875rem] font-medium leading-none text-white shadow-sm ring-offset-1 ring-offset-paper hover:ring-2 hover:ring-accent"
         style={{ background: `var(--grade-${token})`, height: CHIP_H, width: chipWidth(card) }}
       >
         {chipLabel(card)}

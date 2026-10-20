@@ -9,7 +9,7 @@ export function MetroList({ strands }: { strands: StrandVM[] }) {
       <header className="mb-8 border-2 border-ink bg-panel p-4">
         <p className="font-display text-5xl font-bold leading-none tracking-wide">GUNPLA</p>
         <p className="font-display text-4xl font-semibold leading-tight tracking-[0.2em] text-accent">UNIVERSE</p>
-        <p className="mt-3 border-t border-rule pt-2 font-mono text-[11px] text-ink-3">SHEET 1 OF 3 · MAP</p>
+        <p className="mt-3 border-t border-rule pt-2 font-mono text-xs text-ink-3">SHEET 1 OF 3 · MAP</p>
         <Link href="/era/uc-0079-oyw/" className="mt-2 block rounded-sm bg-accent px-2 py-1.5 text-center font-mono text-xs font-semibold text-paper">
           GO TO SHEET 2 → UC 0079 KIT GRID
         </Link>
@@ -42,7 +42,7 @@ export function MetroList({ strands }: { strands: StrandVM[] }) {
                         {st.code} {st.label}
                       </span>
                       <span className="block text-sm text-ink-2">{works}</span>
-                      <span className="mt-1 block font-mono text-[11px] text-ink-3">
+                      <span className="mt-1 block font-mono text-xs text-ink-3">
                         {st.available ? `${total} kits · open matrix →` : "coming soon"}
                       </span>
                     </>

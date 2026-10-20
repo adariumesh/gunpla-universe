@@ -104,7 +104,7 @@ export function CommandPalette() {
                 aria-controls="palette-results"
                 aria-activedescendant={results[active] ? `pal-${results[active].kind}-${results[active].id}` : undefined}
               />
-              <kbd className="font-mono text-[10px] text-ink-3">ESC</kbd>
+              <kbd className="font-mono text-[0.6875rem] text-ink-3">ESC</kbd>
             </div>
             <ul id="palette-results" role="listbox" className="max-h-[50vh] overflow-y-auto py-1">
               {results.length === 0 && (
@@ -121,7 +121,7 @@ export function CommandPalette() {
                   className={`flex cursor-pointer items-center justify-between gap-4 px-4 py-2 text-sm ${i === active ? "bg-paper-2" : ""}`}
                 >
                   <span className="truncate text-ink">{r.label}</span>
-                  <span className="shrink-0 font-mono text-[11px] text-ink-3">
+                  <span className="shrink-0 font-mono text-xs text-ink-3">
                     {r.kind === "suit" ? "SUIT" : "KIT"} · {r.sub}
                   </span>
                 </li>

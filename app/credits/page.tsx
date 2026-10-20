@@ -71,7 +71,7 @@ export default function CreditsPage() {
         <div className="mt-3 overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-rule text-left font-mono text-[10px] uppercase tracking-widest text-ink-3">
+              <tr className="border-b border-rule text-left font-mono text-[0.6875rem] uppercase tracking-widest text-ink-3">
                 <th className="py-2 pr-3">Source</th>
                 <th className="py-2 pr-3">Used for</th>
                 <th className="py-2 pr-3">License</th>

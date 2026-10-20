@@ -31,7 +31,7 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
     <article className="pb-10">
       <header className="border-b border-rule px-5 pb-5 pt-5">
         <div className="flex items-center gap-2 pr-10">
-          <span className="rounded-sm border border-rule px-1 font-mono text-[10px] uppercase tracking-widest text-ink-3">Sheet 3 of 3</span>
+          <span className="rounded-sm border border-rule px-1 font-mono text-[0.6875rem] uppercase tracking-widest text-ink-3">Sheet 3 of 3</span>
           <GradeChip grade={mold.grade} />
           <span className="font-mono text-xs text-ink-3">
             {mold.scale}
@@ -41,7 +41,7 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
         </div>
         <h2 className="mt-2 font-display text-3xl font-bold leading-tight">{sku.name}</h2>
         {sku.officialName && sku.officialName.toLowerCase() !== sku.name.toLowerCase() && (
-          <p className="mt-0.5 font-mono text-[11px] uppercase tracking-wide text-ink-3">Bandai: {sku.officialName}</p>
+          <p className="mt-0.5 font-mono text-xs uppercase tracking-wide text-ink-3">Bandai: {sku.officialName}</p>
         )}
         <p className="mt-1 text-sm text-ink-2">
           {detail.suits.map(({ suit, role }, i) => (
@@ -74,7 +74,7 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
             {sku.jan ? (
               <span className="font-mono">
                 {sku.jan}
-                <span className="ml-1.5 font-sans text-[10px] text-ok" title="Published on the cited source page; EAN-13 check digit verified">
+                <span className="ml-1.5 font-sans text-[0.6875rem] text-ok" title="Published on the cited source page; EAN-13 check digit verified">
                   sourced ✓
                 </span>
               </span>
@@ -101,14 +101,14 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
         </dl>
         {detail.editions.length > 0 && (
           <div className="mt-4">
-            <p className="mb-1.5 font-mono text-[10px] uppercase tracking-widest text-ink-3">Other releases of this mold</p>
+            <p className="mb-1.5 font-mono text-[0.6875rem] uppercase tracking-widest text-ink-3">Other releases of this mold</p>
             <ul className="space-y-1 text-sm">
               {detail.editions.map((ed) => (
                 <li key={ed.sku.id}>
                   <Link href={kitHref(ed.sku.id)} replace scroll={false} className="hover:underline">
                     {ed.sku.name}
                   </Link>{" "}
-                  <span className="font-mono text-[11px] text-ink-3">
+                  <span className="font-mono text-xs text-ink-3">
                     {ed.year} · {yen(ed.latestYen)}
                   </span>
                 </li>
@@ -136,7 +136,7 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
                 Lists ABS among its plastics. ABS parts can crack with solvent-based panel liners.
               </p>
             )}
-            <p className="mt-3 font-mono text-[10px] text-ink-3">Sourced: {mold.provenance.fields.join(", ")} (Gunpla Wiki).</p>
+            <p className="mt-3 font-mono text-[0.6875rem] text-ink-3">Sourced: {mold.provenance.fields.join(", ")} (Gunpla Wiki).</p>
           </>
         ) : (
           <p className="text-sm text-ink-3">No source lists materials, glue or paint for this kit yet.</p>
@@ -146,14 +146,14 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
       {mold.notes && (
         <Section title="Notes from the source" index="03">
           <blockquote className="border-l-2 border-accent pl-3 text-sm text-ink-2">{mold.notes}</blockquote>
-          <p className="mt-2 font-mono text-[10px] text-ink-3">Quoted from Gundam Wiki (CC BY-SA 3.0).</p>
+          <p className="mt-2 font-mono text-[0.6875rem] text-ink-3">Quoted from Gundam Wiki (CC BY-SA 3.0).</p>
         </Section>
       )}
 
       <Section title={`Every ${primarySuit.name} kit`} index="04">
         <LineageStrip lineage={detail.lineage} current={card} compareId={compareId} onCompare={setCompareId} kitHref={kitHref} />
         {detail.lineageTotal > detail.lineage.length && (
-          <p className="mt-2 font-mono text-[10px] text-ink-3">
+          <p className="mt-2 font-mono text-[0.6875rem] text-ink-3">
             Showing {detail.lineage.length} of {detail.lineageTotal} kits nearest this release ·{" "}
             <Link href={`/era/${primarySuit.debutEraId}?focus=${primarySuit.id}`} className="underline underline-offset-2">
               see all in the era grid
@@ -175,14 +175,14 @@ export function KitDetailView({ detail, asDrawer = false }: { detail: KitDetail;
               <a href={r.url} target="_blank" rel="noreferrer" className="underline decoration-rule underline-offset-4 hover:decoration-ink">
                 {SOURCE_LABEL[r.name]}: {r.title}
               </a>
-              <span className="font-mono text-[10px] text-ink-3">
+              <span className="font-mono text-[0.6875rem] text-ink-3">
                 {r.revid ? `rev ${r.revid} · ` : ""}
                 {r.license}
               </span>
             </li>
           ))}
         </ul>
-        <p className="mt-2 font-mono text-[10px] text-ink-3">
+        <p className="mt-2 font-mono text-[0.6875rem] text-ink-3">
           Fetched {sku.provenance.verifiedAt} · list prices as recorded by the source (tax treatment varies) ·{" "}
           <Link href="/credits" className="underline underline-offset-2">
             all credits
@@ -210,7 +210,7 @@ function Section({ title, index, children }: { title: string; index: string; chi
   return (
     <section className="border-b border-rule px-5 py-5">
       <h3 className="mb-3 flex items-baseline gap-2 font-display text-lg font-bold">
-        <span className="font-mono text-[11px] font-normal text-ink-3">{index}</span>
+        <span className="font-mono text-xs font-normal text-ink-3">{index}</span>
         {title}
       </h3>
       {children}
@@ -221,7 +221,7 @@ function Section({ title, index, children }: { title: string; index: string; chi
 function Field({ label, children, verbatim = false }: { label: string; children: React.ReactNode; verbatim?: boolean }) {
   return (
     <div className="min-w-0">
-      <dt className="font-mono text-[10px] uppercase tracking-widest text-ink-3">{label}</dt>
+      <dt className="font-mono text-[0.6875rem] uppercase tracking-widest text-ink-3">{label}</dt>
       <dd className={`mt-0.5 ${verbatim ? "" : "capitalize-first"}`}>{children}</dd>
     </div>
   );
@@ -256,12 +256,12 @@ function LineageStrip({
           <li
             key={c.mold.id}
             ref={isCurrent ? currentRef : undefined}
-            className={`relative w-[120px] shrink-0 rounded-md border p-2 ${isCurrent ? "border-accent bg-paper-2" : comparing ? "border-ink" : "border-rule"}`}
+            className={`relative w-[7.5rem] shrink-0 rounded-md border p-2 ${isCurrent ? "border-accent bg-paper-2" : comparing ? "border-ink" : "border-rule"}`}
           >
             <Link href={kitHref(c.sku.id)} replace scroll={false} className="block" aria-current={isCurrent ? "true" : undefined}>
               <div className="flex items-center justify-between">
                 <GradeChip grade={c.mold.grade} />
-                <span className="font-mono text-[10px] text-ink-3">{c.year}</span>
+                <span className="font-mono text-[0.6875rem] text-ink-3">{c.year}</span>
               </div>
               <p className="mt-1.5 truncate font-display text-sm font-bold" title={c.sku.name}>
                 {c.mold.versionLabel ?? c.mold.line ?? c.sku.name}
@@ -272,12 +272,12 @@ function LineageStrip({
                 type="button"
                 onClick={() => onCompare(comparing ? null : c.mold.id)}
                 aria-pressed={comparing}
-                className={`mt-1 flex items-center gap-1 font-mono text-[10px] ${comparing ? "text-ink" : "text-ink-3 hover:text-ink"}`}
+                className={`mt-1 flex items-center gap-1 font-mono text-[0.6875rem] ${comparing ? "text-ink" : "text-ink-3 hover:text-ink"}`}
               >
                 <GitCompareArrows size={11} /> {comparing ? "comparing" : "compare"}
               </button>
             )}
-            {isCurrent && <p className="mt-1 font-mono text-[10px] text-accent">viewing</p>}
+            {isCurrent && <p className="mt-1 font-mono text-[0.6875rem] text-accent">viewing</p>}
           </li>
         );
       })}
@@ -300,8 +300,8 @@ function CompareTable({ a, b, onClose }: { a: LineageCard; b: LineageCard; onClo
   return (
     <div className="mt-4 overflow-hidden rounded-md border border-rule">
       <div className="flex items-center justify-between bg-paper-2 px-3 py-2">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-ink-3">Side by side · sourced values only</span>
-        <button type="button" onClick={onClose} className="font-mono text-[10px] text-ink-3 hover:text-ink">
+        <span className="font-mono text-[0.6875rem] uppercase tracking-widest text-ink-3">Side by side · sourced values only</span>
+        <button type="button" onClick={onClose} className="font-mono text-[0.6875rem] text-ink-3 hover:text-ink">
           close
         </button>
       </div>
@@ -309,7 +309,7 @@ function CompareTable({ a, b, onClose }: { a: LineageCard; b: LineageCard; onClo
         <tbody>
           {rows.map(([label, get]) => (
             <tr key={label} className="border-t border-rule">
-              <td className="w-1/4 px-3 py-1.5 font-mono text-[11px] text-ink-3">{label}</td>
+              <td className="w-1/4 px-3 py-1.5 font-mono text-xs text-ink-3">{label}</td>
               <td className="px-3 py-1.5">{get(a)}</td>
               <td className="px-3 py-1.5">{get(b)}</td>
             </tr>

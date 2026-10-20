@@ -42,7 +42,7 @@ export function KitDrawer({ title, onClose, children }: { title: string; onClose
         aria-label={title}
         tabIndex={-1}
         className={`absolute flex flex-col overflow-hidden border-rule bg-panel shadow-2xl outline-none ${
-          mobile ? "inset-x-0 bottom-0 h-[92dvh] rounded-t-2xl border-t" : "inset-y-0 right-0 w-[min(560px,92vw)] border-l"
+          mobile ? "inset-x-0 bottom-0 h-[92dvh] rounded-t-2xl border-t" : "inset-y-0 right-0 w-[min(40rem,92vw)] border-l"
         }`}
         initial={mobile ? { y: "100%" } : { x: "100%" }}
         animate={mobile ? { y: 0 } : { x: 0 }}

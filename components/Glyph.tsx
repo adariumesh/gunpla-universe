@@ -41,7 +41,7 @@ export function GradeChip({ grade, className = "" }: { grade: string; className?
   const label = grade === "VINTAGE" ? "VTG" : grade;
   return (
     <span
-      className={`inline-flex items-center rounded-sm px-1.5 py-px font-mono text-[10px] font-medium tracking-wider text-white ${className}`}
+      className={`inline-flex items-center rounded-sm px-1.5 py-px font-mono text-[0.6875rem] font-medium tracking-wider text-white ${className}`}
       style={{ background: `var(--grade-${token})` }}
     >
       {label}
@@ -53,7 +53,7 @@ export function SourcesBadge({ className = "" }: { className?: string }) {
   return (
     <span
       title="Every value comes from a cited open source (Gundam Wiki, Gunpla Wiki, Wikipedia, gunpla.fyi). Missing values are shown as missing, never estimated."
-      className={`inline-flex -rotate-2 items-center whitespace-nowrap rounded-sm border-2 border-warn px-1.5 py-0.5 font-mono text-[10px] font-medium uppercase tracking-widest text-warn ${className}`}
+      className={`inline-flex -rotate-2 items-center whitespace-nowrap rounded-sm border-2 border-warn px-1.5 py-0.5 font-mono text-[0.6875rem] font-medium uppercase tracking-widest text-warn ${className}`}
     >
       Sourced data · see credits
     </span>

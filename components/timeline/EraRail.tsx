@@ -29,7 +29,7 @@ export function EraRail({ rails }: { rails: RailTimeline[] }) {
       {/* Desktop: vertical rail */}
       <motion.nav
         aria-label={`${rail.name} eras`}
-        className="fixed inset-y-0 left-0 z-30 hidden w-[76px] flex-col items-center border-r border-rule bg-panel md:flex"
+        className="fixed inset-y-0 left-0 z-30 hidden w-[4.75rem] flex-col items-center border-r border-rule bg-panel md:flex"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.25 }}
@@ -68,7 +68,7 @@ export function EraRail({ rails }: { rails: RailTimeline[] }) {
             );
             const label = (
               <span
-                className={`relative mt-0.5 rounded px-1 font-mono text-[10px] leading-none ${active ? "font-medium text-ink" : "text-ink-3"}`}
+                className={`relative mt-0.5 rounded px-1 font-mono text-[0.6875rem] leading-none ${active ? "font-medium text-ink" : "text-ink-3"}`}
                 style={{ background: "var(--panel)" }}
               >
                 {shortCode(s.code)}

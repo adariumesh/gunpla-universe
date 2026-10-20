@@ -16,7 +16,7 @@ export function SearchButton() {
     >
       <Search size={15} aria-hidden />
       <span className="hidden sm:inline">Search suits &amp; kits</span>
-      <kbd className="hidden rounded border border-rule px-1 font-mono text-[10px] text-ink-3 sm:inline">⌘K</kbd>
+      <kbd className="hidden rounded border border-rule px-1 font-mono text-[0.6875rem] text-ink-3 sm:inline">⌘K</kbd>
     </button>
   );
 }

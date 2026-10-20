@@ -61,10 +61,10 @@ export function EraView({ matrix }: { matrix: EraMatrix }) {
       <Suspense fallback={null}>
         <FocusReader onFocus={setFocus} />
       </Suspense>
-      <header className="shrink-0 border-b border-rule bg-paper px-4 pb-3 pt-4 md:px-6">
+      <header className="shrink-0 border-b border-rule bg-paper px-4 pb-3 pt-4 md:px-6 2xl:px-8">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="font-mono text-[11px] uppercase tracking-widest" style={{ color }}>
+            <p className="font-mono text-xs uppercase tracking-widest" style={{ color }}>
               <span className="mr-2 rounded-sm border border-current px-1">Sheet 2 of 3 · kit grid</span>
               {matrix.timeline.short} {matrix.timeline.name} / {matrix.era.code}
             </p>
@@ -79,7 +79,7 @@ export function EraView({ matrix }: { matrix: EraMatrix }) {
             <p className="mt-0.5 text-sm text-ink-2">
               {matrix.works.map((w) => `${w.title} (${w.releaseYear})`).join(" · ")}
             </p>
-            <p className="mt-1 font-mono text-[11px] text-ink-3">
+            <p className="mt-1 font-mono text-xs text-ink-3">
               {suitCount} suits · {matrix.kitCount} kits · {matrix.yearRange[0]}–{matrix.yearRange[1]}
               <span className="ml-3 inline-flex align-middle lg:hidden">
                 <SourcesBadge />

@@ -7,9 +7,9 @@ import { GRADE_ROW_LABEL, type GradeRow } from "@/lib/repo";
 import { GhostCell, KitStack } from "./KitTile";
 import type { VisibleBand, VisibleColumn } from "./model";
 
-const BAND_H = 30;
-const COMPACT_W = 172;
-const RICH_W = 212;
+const BAND_H = "1.875rem";
+const COMPACT_W = "11rem";
+const RICH_W = "13.5rem";
 
 const KNOWN_TONE: Record<string, string> = {
   EFSF: "var(--strand-uc)",
@@ -76,13 +76,13 @@ export function GradeGrid({
 
   // Entrance animation only for small eras: a 150-column grid must never wait on animation frames to become visible.
   const animate = columns.length <= 30;
-  const template = `var(--label-w) ${columns.map((c) => `${c.compact ? COMPACT_W : RICH_W}px`).join(" ")}`;
+  const template = `var(--label-w) ${columns.map((c) => `${c.compact ? COMPACT_W : RICH_W}`).join(" ")}`;
 
   return (
     <div
       role="table"
       aria-label="Mobile suits by Gunpla grade"
-      className="matrix-grid grid w-max min-w-full gap-x-3 pb-10 pr-6"
+      className="matrix-grid grid w-max min-w-full gap-x-4 pb-12 pr-8"
       style={{ gridTemplateColumns: template }}
     >
       {/* Row 1: faction bands */}
@@ -93,7 +93,7 @@ export function GradeGrid({
           className="sticky top-0 z-20 flex items-end bg-paper"
           style={{ gridColumn: `span ${b.columns.length}`, height: BAND_H }}
         >
-          <div className="w-full border-b-[3px] pb-1 font-mono text-[11px] font-medium uppercase tracking-[0.2em]" style={{ borderColor: FACTION_TONE[b.faction], color: FACTION_TONE[b.faction] }}>
+          <div className="w-full border-b-[3px] pb-1 font-mono text-xs font-medium uppercase tracking-[0.2em]" style={{ borderColor: FACTION_TONE[b.faction], color: FACTION_TONE[b.faction] }}>
             {b.faction}
           </div>
         </div>
@@ -120,7 +120,7 @@ export function GradeGrid({
         <div role="row" key={r} className="contents">
           <div role="rowheader" className="sticky left-0 z-10 flex flex-col justify-start border-t border-rule bg-paper py-3 pr-2">
             <span className="font-display text-sm font-bold leading-tight md:text-base">{GRADE_ROW_LABEL[r]}</span>
-            <span className="hidden font-mono text-[10px] text-ink-3 md:block">{r === "VINTAGE" ? "1980s–90s" : r === "OTHER" ? "misc. lines" : r}</span>
+            <span className="hidden font-mono text-[0.6875rem] text-ink-3 md:block">{r === "VINTAGE" ? "1980s–90s" : r === "OTHER" ? "misc. lines" : r}</span>
           </div>
           {columns.map((c, i) => {
             const cards = c.cellsFiltered[r];
@@ -180,13 +180,13 @@ function SuitHeader({
       style={{ top: BAND_H }}
     >
       <div className={`rounded-md ${focused ? "ring-2 ring-accent ring-offset-2 ring-offset-paper" : ""}`}>
-        <p className="font-mono text-[11px]" style={{ color: tone }}>
+        <p className="font-mono text-xs" style={{ color: tone }}>
           {s.name.toUpperCase().startsWith(s.modelNumber.toUpperCase()) ? "\u00A0" : s.modelNumber}
         </p>
         <p className="truncate font-display text-lg font-bold leading-tight" title={s.name}>
           {s.name}
         </p>
-        <p className="truncate text-[11px] text-ink-3">
+        <p className="truncate text-xs text-ink-3">
           {col.parentId
             ? `↳ ${s.variantKind?.replace(/-/g, " ")}`
             : s.pilot
@@ -195,7 +195,7 @@ function SuitHeader({
                 ? s.continuity
                 : " "}
         </p>
-        <div className="mt-1 flex flex-wrap items-center gap-1.5 font-mono text-[10px] text-ink-3">
+        <div className="mt-1 flex flex-wrap items-center gap-1.5 font-mono text-[0.6875rem] text-ink-3">
           <span title={`${col.kitCount} releases in total, including variants and limited editions`}>
             {visible} kit{visible === 1 ? "" : "s"}
             {col.kitCount > visible && <span className="text-ink-3/70"> · {col.kitCount - visible} hidden</span>}

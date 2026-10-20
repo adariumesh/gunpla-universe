@@ -16,7 +16,7 @@ export default function EraLayout({ children }: { children: React.ReactNode }) {
   }));
 
   return (
-    <div className="min-h-dvh md:pl-[76px]">
+    <div className="min-h-dvh md:pl-[4.75rem]">
       <EraRail rails={rails} />
       {children}
       <Suspense fallback={null}>

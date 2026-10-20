@@ -68,14 +68,14 @@ export function RetailerLinks({ jan, itemCode, grade, modelNumber, suitName }: P
               className="flex items-center justify-between rounded-md border border-rule px-3 py-2 text-sm hover:border-accent"
             >
               <span>
-                {l.name} <span className="font-mono text-[10px] text-ink-3">{l.region}</span>
+                {l.name} <span className="font-mono text-[0.6875rem] text-ink-3">{l.region}</span>
               </span>
               <ExternalLink size={13} className="text-ink-3" aria-hidden />
             </a>
           </li>
         ))}
       </ul>
-      <p className="mt-2 font-mono text-[10px] text-ink-3">
+      <p className="mt-2 font-mono text-[0.6875rem] text-ink-3">
         {jan ? "HLJ and Modelverse search by JAN (exact kit); " : ""}HobbySearch, Amazon and eBay search by name, so check the grade in the results
         {itemCode ? ` (Bandai #${itemCode})` : ""}. No prices or stock are tracked; links are not affiliated.
       </p>
