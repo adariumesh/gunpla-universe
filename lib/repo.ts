@@ -1,22 +1,8 @@
 import { db, type Db } from "./data";
+import { GRADE_ROWS, gradeRow, suitLabel, type GradeRow } from "./labels";
 import type { Era, Faction, Grade, KitSKU, MobileSuit, Mold, TimelineNode } from "./schema";
 
-export const GRADE_ROWS = ["VINTAGE", "HG", "RG", "MG", "PG", "EG", "OTHER"] as const;
-export type GradeRow = (typeof GRADE_ROWS)[number];
-
-export const GRADE_ROW_LABEL: Record<GradeRow, string> = {
-  VINTAGE: "Vintage",
-  HG: "HG / HGUC",
-  RG: "Real Grade",
-  MG: "Master Grade",
-  PG: "Perfect Grade",
-  EG: "Entry Grade",
-  OTHER: "FG · SD · MEGA",
-};
-
-export function gradeRow(g: Grade): GradeRow {
-  return (GRADE_ROWS as readonly string[]).includes(g) ? (g as GradeRow) : "OTHER";
-}
+export { GRADE_ROWS, GRADE_ROW_LABEL, gradeRow, suitLabel, type GradeRow } from "./labels";
 
 // Heroes on the left, antagonists on the right.
 const FACTION_ORDER: Faction[] = ["EFSF", "AEUG", "Londo Bell", "Titans", "Zeon", "Axis", "Neo Zeon"];
@@ -323,10 +309,6 @@ export function getKit(skuId: string, d: Db = db): KitDetail | null {
 
 export type SearchEntry = { kind: "suit" | "kit"; id: string; label: string; sub: string; href: string };
 
-/** "RX-78-2 Gundam"; just the name when the source has no separate model number. */
-export function suitLabel(s: Pick<MobileSuit, "modelNumber" | "name">): string {
-  return s.name.toUpperCase().startsWith(s.modelNumber.toUpperCase()) ? s.name : `${s.modelNumber} ${s.name}`;
-}
 
 export function getSearchIndex(d: Db = db): SearchEntry[] {
   const { suitById, eraById } = idx(d);

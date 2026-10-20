@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { GRADE_ROW_LABEL, type GradeRow } from "@/lib/repo";
+import { GRADE_ROW_LABEL, type GradeRow } from "@/lib/labels";
 import { GhostCell, KitStack } from "./KitTile";
 import type { VisibleBand, VisibleColumn } from "./model";
 

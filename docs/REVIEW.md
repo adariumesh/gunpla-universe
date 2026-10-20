@@ -1,6 +1,6 @@
 # Review brief
 
-**Live site:** https://adariumesh.github.io/gunpla-universe/ · **Repo:** https://github.com/adariumesh/gunpla-universe
+**Live site:** moving to Vercel · **Repo:** https://github.com/adariumesh/gunpla-universe
 
 ## What this is
 
@@ -10,7 +10,7 @@ A three-sheet guide to Gunpla. Sheet 1 is a timeline map, sheet 2 is an era's su
 
 | Area | State |
 |---|---|
-| Site | Live on GitHub Pages; redeploys on every push to `main` |
+| Site | Moving from GitHub Pages to Vercel; deploys on every push to `main` |
 | Data refresh | Weekly GitHub Action; ships new data only if the JAN audit and tests pass |
 | Coverage | 1,028 suits, 3,380 kits, 13 timelines, all 39 stations open |
 | Facts per kit | release date 100% · list price 91% · materials/glue 27% · JAN 23% · Bandai item code 22% |

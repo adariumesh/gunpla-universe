@@ -1,6 +1,6 @@
 # Gunpla Universe
 
-**Live site:** https://adariumesh.github.io/gunpla-universe/
+**Live site:** moving to Vercel (the old GitHub Pages build is retired; new URL to follow)
 
 A visual guide to every Gundam timeline and the Gunpla model kits Bandai has released for each mobile suit. You start at a transit-map of the timelines, open an era to see its suits against every kit grade, and open a kit to see its sourced facts and where to buy it.
 
@@ -36,7 +36,7 @@ npm install
 npm run dev              # http://localhost:3000
 npm test                 # 28 tests
 npm run validate:data    # schema, integrity, JAN provenance audit
-npm run build:pages      # static site in out/, as deployed
+npm run build && npm start   # production build, as deployed
 ```
 
 ## How the data is built
@@ -61,13 +61,15 @@ npm run build:pages      # static site in out/, as deployed
 
 ## Deployment
 
+Hosted on **Vercel**, connected to the GitHub repo: every push to `main` deploys to production, and every other branch or PR gets a preview URL.
+
 GitHub Actions (`.github/workflows/`):
-- `deploy.yml`: on every push to `main`, validates the data, runs the tests, builds the static site and deploys it to GitHub Pages.
-- `refresh.yml`: every Monday, re-fetches all sources and commits the new catalog **only if** the JAN audit and tests pass, then redeploys.
+- `ci.yml`: on every push and PR, validates the data, typechecks, runs the tests and builds. Make it a required check on `main` so a failed audit never reaches production.
+- `refresh.yml`: every Monday, re-fetches all sources and commits the new catalog **only if** the JAN audit and tests pass; Vercel deploys that commit.
 
 ## Documentation
 
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): code layout, data model, ingestion pipeline, static-site design
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): code layout, data model, ingestion pipeline, rendering and hosting
 - [docs/REVIEW.md](docs/REVIEW.md): project status, known limitations, decisions and open questions for reviewers
 - [docs/reddit-plan.md](docs/reddit-plan.md): options for adding community build knowledge
 - `data/generated/ingest-report.md`: output of the latest data run

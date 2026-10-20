@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { GradeChip, SourcesBadge } from "@/components/Glyph";
 import { ArtPlate } from "@/components/matrix/KitTile";
-import { suitLabel, type KitDetail, type LineageCard } from "@/lib/repo";
+import { suitLabel } from "@/lib/labels";
+import type { KitDetail, LineageCard } from "@/lib/repo";
 import { RetailerLinks } from "./RetailerLinks";
 
 const yen = (n: number | null) => (n === null ? "—" : `¥${n.toLocaleString("en-US")}`);

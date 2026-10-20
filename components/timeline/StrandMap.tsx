@@ -4,7 +4,6 @@ import { animate, useReducedMotion } from "motion/react";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { CC_RING, VIEWBOX, workLabelPos, type StationLayout, type StrandLayout } from "@/lib/layout/strands";
-import { withBase } from "@/lib/basePath";
 
 export type StationVM = Omit<StationLayout, "leftWorks"> & {
   code: string;
@@ -284,7 +283,7 @@ function Station({
 
   return (
     <a
-      href={withBase(`/era/${st.eraId}/`)}
+      href={`/era/${st.eraId}`}
       onClick={(e) => {
         if (e.metaKey || e.ctrlKey || e.shiftKey) return;
         e.preventDefault();
@@ -335,7 +334,7 @@ function TitleBlock({ opacity }: { opacity: number }) {
         </g>
       ))}
       {/* Sheet 2 is any era's kit grid: offer a direct way in, not just a hint. */}
-      <a href={withBase("/era/uc-0079-oyw/")} className="sheet-link">
+      <a href={"/era/uc-0079-oyw"} className="sheet-link">
         <rect x={x + 8} y={y + 234} width={w - 16} height={22} rx={3} fill="var(--accent)" />
         <text x={x + w / 2} y={y + 249} textAnchor="middle" fontSize={12.5} fontWeight={600} fill="var(--paper)" className="font-mono">
           {"GO TO SHEET 2 → UC 0079 KIT GRID"}

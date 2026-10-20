@@ -4,7 +4,6 @@ import Link from "next/link";
 import { TopControls } from "@/components/TopControls";
 import { db } from "@/lib/data";
 import { catalog } from "@/lib/ingested";
-import { withBase } from "@/lib/basePath";
 
 export const metadata: Metadata = { title: "Credits & data sources · Gunpla Universe" };
 
@@ -99,7 +98,7 @@ export default function CreditsPage() {
         <p className="mt-2 text-ink-2">
           Text and data derived from Gundam Wiki, Gunpla Wiki and Wikipedia are licensed under Creative Commons Attribution-ShareAlike. The derived
           catalog is offered under the same terms (CC BY-SA 4.0):{" "}
-          <a href={withBase("/data/catalog.json")} className="underline underline-offset-4">
+          <a href={"/data/catalog.json"} className="underline underline-offset-4">
             download catalog.json
           </a>{" "}
           ({catalog.suits.length.toLocaleString("en-US")} suits, {catalog.releases.length.toLocaleString("en-US")} releases, generated{" "}

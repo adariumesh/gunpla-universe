@@ -4,7 +4,6 @@
   "private": true,
   "description": "Every Gundam timeline and every Gunpla kit for each mobile suit, built from cited open data.",
   "license": "MIT",
-  "homepage": "https://adariumesh.github.io/gunpla-universe/",
   "repository": {
     "type": "git",
     "url": "https://github.com/adariumesh/gunpla-universe.git"
@@ -20,8 +19,7 @@
     "typecheck": "tsc --noEmit",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run",
-    "ingest": "tsx scripts/ingest/index.ts",
-    "build:pages": "PAGES_EXPORT=1 next build"
+    "ingest": "tsx scripts/ingest/index.ts"
   },
   "dependencies": {
     "lucide-react": "1.59.0",

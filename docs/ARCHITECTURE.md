@@ -1,6 +1,6 @@
 # Architecture
 
-Next.js 16 (App Router), React 19, Tailwind CSS 4, Motion, Zod, Vitest. The site is exported as static files for GitHub Pages; `npm run dev` runs it as a normal Next.js app.
+Next.js 16 (App Router), React 19, Tailwind CSS 4, Motion, Zod, Vitest. Hosted on Vercel as a normal Next.js app; `npm run dev` runs the same app locally.
 
 ## Code layout
 
@@ -21,7 +21,8 @@ lib/
   schema.ts              Zod schemas for every record
   ingested.ts            builds the app dataset from data/generated/catalog.json
   data.ts                validated dataset + referential-integrity checks
-  repo.ts                read-side selectors (era matrix, kit detail, search index)
+  repo.ts                read-side selectors (era matrix, kit detail, search index); server-only
+  labels.ts              grade rows and labels, safe to import from client components
   layout/strands.ts      map geometry
 data/
   timelines.ts, suits.ts hand-curated structure: timelines, stations, works, variant links
@@ -64,9 +65,10 @@ Merges between sources happen only on exact evidence (line number, Bandai manual
 
 `validate-data.ts` re-opens the cached source page cited for every JAN and fails if the JAN isn't on it. CI runs it before every deploy and every weekly data commit.
 
-## Static-site design
+## Rendering and hosting
 
-- `PAGES_EXPORT=1` switches `next.config.ts` to `output: "export"` with the `/gunpla-universe` base path.
-- Every era and kit page is pre-rendered (`generateStaticParams`), about 390 MB in total.
-- The kit drawer opens from `?kit=<key>` and loads the pre-rendered `/kit-data/<key>` file, so it works without a server, and drawer URLs can be shared.
+- The map, credits, search index and catalog download are static. All 39 era grids are pre-rendered at build time (`generateStaticParams`).
+- Kit pages (`/kit/<key>`) and drawer data (`/kit-data/<key>`) render on first request and are cached until the next deploy. The catalog only changes by commit, and every commit redeploys, so the cache never goes stale; the build no longer pre-renders 3,380 kits twice.
+- The kit drawer opens from `?kit=<key>` and fetches `/kit-data/<key>`, so drawer URLs can be shared.
+- Client components must import display constants from `lib/labels.ts`, never values from `lib/repo.ts`: `repo` imports the catalog, and a value import from a client component bundles all of it (about 4 MB) into the browser.
 - To keep pages small, era grids ship slimmed tile records, and the kit page's lineage strip shows the 40 kits nearest the current one.

@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
-import { db } from "@/lib/data";
 import { getKit } from "@/lib/repo";
 
-// Pre-rendered per-kit JSON that the in-page drawer loads (works on static hosting).
+// Per-kit JSON that the in-page drawer loads. Rendered on first request and cached
+// until the next deploy (the catalog only changes by commit), so the build doesn't
+// pre-render all 3,380 kits.
 export const dynamic = "force-static";
-export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return db.skus.map((k) => ({ skuId: k.id }));
+  return [];
 }
 
 export async function GET(_req: Request, { params }: { params: Promise<{ skuId: string }> }) {

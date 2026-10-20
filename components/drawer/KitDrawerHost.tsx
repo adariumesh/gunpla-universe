@@ -2,14 +2,13 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { withBase } from "@/lib/basePath";
 import type { KitDetail } from "@/lib/repo";
 import { KitDetailView } from "./KitDetailView";
 import { KitDrawer } from "./KitDrawer";
 
 /**
- * Opens the kit drawer for `?kit=<key>` on the current page. Kit data comes from the
- * pre-rendered /kit-data/<key> file, so this works on static hosting too.
+ * Opens the kit drawer for `?kit=<key>` on the current page. Kit data comes from
+ * /kit-data/<key>, rendered on first request and then served from cache.
  */
 export function KitDrawerHost() {
   const params = useSearchParams();
@@ -25,7 +24,7 @@ export function KitDrawerHost() {
     }
     let alive = true;
     setState((s) => (s?.id === kitId ? s : { id: kitId }));
-    fetch(withBase(`/kit-data/${encodeURIComponent(kitId)}`))
+    fetch(`/kit-data/${encodeURIComponent(kitId)}`)
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((detail: KitDetail) => alive && setState({ id: kitId, detail }))
       .catch(() => alive && setState({ id: kitId, error: true }));
