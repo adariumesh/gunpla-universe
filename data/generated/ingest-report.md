@@ -1,6 +1,6 @@
 # Ingest report
 
-Generated 2026-10-19T23:41:56.092Z by `npm run ingest`. Do not edit by hand.
+Generated 2026-10-26T13:19:42.873Z by `npm run ingest`. Do not edit by hand.
 
 **1028 suits · 3415 releases** (2025 standard) · 764 with JAN · 736 with Bandai item code · 897 with materials
 
@@ -52,7 +52,7 @@ Generated 2026-10-19T23:41:56.092Z by `npm run ingest`. Do not edit by hand.
 
 | Source | Page | Revision | License | Tables | Kit rows | Resolved to a suit |
 |---|---|---|---|---|---|---|
-| gundam-wiki | [Master Grade](https://gundam.fandom.com/wiki/Master_Grade) | 704874 | CC BY-SA 3.0 | 84 | 775 | 746 |
+| gundam-wiki | [Master Grade](https://gundam.fandom.com/wiki/Master_Grade) | 706131 | CC BY-SA 3.0 | 84 | 775 | 746 |
 | gundam-wiki | [Real Grade](https://gundam.fandom.com/wiki/Real_Grade) | 704346 | CC BY-SA 3.0 | 36 | 211 | 197 |
 | gundam-wiki | [Perfect Grade](https://gundam.fandom.com/wiki/Perfect_Grade) | 704347 | CC BY-SA 3.0 | 9 | 73 | 72 |
 | gundam-wiki | [Entry Grade](https://gundam.fandom.com/wiki/Entry_Grade) | 701677 | CC BY-SA 3.0 | 10 | 51 | 50 |
@@ -60,8 +60,8 @@ Generated 2026-10-19T23:41:56.092Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [Mega Size Model](https://gundam.fandom.com/wiki/Mega_Size_Model) | 701883 | CC BY-SA 3.0 | 4 | 30 | 30 |
 | gundam-wiki | [Reborn-One Hundred](https://gundam.fandom.com/wiki/Reborn-One_Hundred) | 703703 | CC BY-SA 3.0 | 2 | 36 | 34 |
 | gundam-wiki | [Full Mechanics](https://gundam.fandom.com/wiki/Full_Mechanics) | 700563 | CC BY-SA 3.0 | 2 | 14 | 14 |
-| gundam-wiki | [Master Grade SD](https://gundam.fandom.com/wiki/Master_Grade_SD) | 704416 | CC BY-SA 3.0 | 2 | 12 | 12 |
-| gundam-wiki | [High Grade Universal Century](https://gundam.fandom.com/wiki/High_Grade_Universal_Century) | 705820 | CC BY-SA 3.0 | 19 | 209 | 198 |
+| gundam-wiki | [Master Grade SD](https://gundam.fandom.com/wiki/Master_Grade_SD) | 706140 | CC BY-SA 3.0 | 2 | 12 | 12 |
+| gundam-wiki | [High Grade Universal Century](https://gundam.fandom.com/wiki/High_Grade_Universal_Century) | 706426 | CC BY-SA 3.0 | 19 | 209 | 198 |
 | gundam-wiki | [High Grade (1990)](https://gundam.fandom.com/wiki/High_Grade_(1990)) | 662877 | CC BY-SA 3.0 | 4 | 7 | 7 |
 | gundam-wiki | [High Grade-EX](https://gundam.fandom.com/wiki/High_Grade-EX) | 631547 | CC BY-SA 3.0 | 2 | 3 | 3 |
 | gundam-wiki | [High Grade After Colony](https://gundam.fandom.com/wiki/High_Grade_After_Colony) | 620084 | CC BY-SA 3.0 | 2 | 31 | 31 |
@@ -74,7 +74,7 @@ Generated 2026-10-19T23:41:56.092Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [High Grade the Witch from Mercury](https://gundam.fandom.com/wiki/High_Grade_the_Witch_from_Mercury) | 704345 | CC BY-SA 3.0 | 0 | 47 | 45 |
 | gundam-wiki | [High Grade Reconguista in G](https://gundam.fandom.com/wiki/High_Grade_Reconguista_in_G) | 674149 | CC BY-SA 3.0 | 2 | 27 | 27 |
 | gundam-wiki | [High Grade Gundam The Origin](https://gundam.fandom.com/wiki/High_Grade_Gundam_The_Origin) | 668769 | CC BY-SA 3.0 | 13 | 77 | 72 |
-| gundam-wiki | [High Grade Gundam Thunderbolt](https://gundam.fandom.com/wiki/High_Grade_Gundam_Thunderbolt) | 665197 | CC BY-SA 3.0 | 4 | 22 | 21 |
+| gundam-wiki | [High Grade Gundam Thunderbolt](https://gundam.fandom.com/wiki/High_Grade_Gundam_Thunderbolt) | 706444 | CC BY-SA 3.0 | 4 | 22 | 21 |
 | gundam-wiki | [High Grade Mobile Suit Gundam: The 08th MS Team](https://gundam.fandom.com/wiki/High_Grade_Mobile_Suit_Gundam%3A_The_08th_MS_Team) | 662151 | CC BY-SA 3.0 | 3 | 11 | 7 |
 | gundam-wiki | [High Grade Mobile Suit Gundam: Cucuruz Doan's Island](https://gundam.fandom.com/wiki/High_Grade_Mobile_Suit_Gundam%3A_Cucuruz_Doan's_Island) | 665930 | CC BY-SA 3.0 | 3 | 11 | 11 |
 | gundam-wiki | [High Grade Mobile Suit Gundam GQuuuuuuX](https://gundam.fandom.com/wiki/High_Grade_Mobile_Suit_Gundam_GQuuuuuuX) | 695179 | CC BY-SA 3.0 | 2 | 19 | 19 |
@@ -100,26 +100,26 @@ Generated 2026-10-19T23:41:56.092Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [SD Gundam G Generation Model Series](https://gundam.fandom.com/wiki/SD_Gundam_G_Generation_Model_Series) | 687766 | CC BY-SA 3.0 | 4 | 66 | 63 |
 | gundam-wiki | [Mobile Suit Gundam Model Series](https://gundam.fandom.com/wiki/Mobile_Suit_Gundam_Model_Series) | 687765 | CC BY-SA 3.0 | 3 | 58 | 57 |
 | gundam-wiki | [Mobile Suit Variations Model Series](https://gundam.fandom.com/wiki/Mobile_Suit_Variations_Model_Series) | 629453 | CC BY-SA 3.0 | 2 | 38 | 38 |
-| gundam-wiki | [1/144 Mobile Suit Gundam 0080 Model Series](https://gundam.fandom.com/wiki/1%2F144_Mobile_Suit_Gundam_0080_Model_Series) | 633342 | CC BY-SA 3.0 | 3 | 10 | 10 |
-| gundam-wiki | [1/144 Mobile Suit Gundam 0083 Model Series](https://gundam.fandom.com/wiki/1%2F144_Mobile_Suit_Gundam_0083_Model_Series) | 657332 | CC BY-SA 3.0 | 3 | 7 | 7 |
+| gundam-wiki | [1/144 Mobile Suit Gundam 0080 Model Series](https://gundam.fandom.com/wiki/1%2F144_Mobile_Suit_Gundam_0080_Model_Series) | 706364 | CC BY-SA 3.0 | 3 | 10 | 10 |
+| gundam-wiki | [1/144 Mobile Suit Gundam 0083 Model Series](https://gundam.fandom.com/wiki/1%2F144_Mobile_Suit_Gundam_0083_Model_Series) | 706363 | CC BY-SA 3.0 | 3 | 7 | 7 |
 | gundam-wiki | [Mobile Suit Zeta Gundam Model Series](https://gundam.fandom.com/wiki/Mobile_Suit_Zeta_Gundam_Model_Series) | 657505 | CC BY-SA 3.0 | 3 | 51 | 49 |
 | gundam-wiki | [Mobile Suit Gundam ZZ Model Series](https://gundam.fandom.com/wiki/Mobile_Suit_Gundam_ZZ_Model_Series) | 662329 | CC BY-SA 3.0 | 2 | 19 | 19 |
 | gundam-wiki | [Mobile Suit Gundam: Char's Counterattack Model Series](https://gundam.fandom.com/wiki/Mobile_Suit_Gundam%3A_Char's_Counterattack_Model_Series) | 663981 | CC BY-SA 3.0 | 4 | 16 | 16 |
 | gundam-wiki | [1/144 Gundam Sentinel Model Series](https://gundam.fandom.com/wiki/1%2F144_Gundam_Sentinel_Model_Series) | 629603 | CC BY-SA 3.0 | 2 | 6 | 6 |
-| gundam-wiki | [1/100 Gundam F90 Model Series](https://gundam.fandom.com/wiki/1%2F100_Gundam_F90_Model_Series) | 662644 | CC BY-SA 3.0 | 1 | 4 | 4 |
+| gundam-wiki | [1/100 Gundam F90 Model Series](https://gundam.fandom.com/wiki/1%2F100_Gundam_F90_Model_Series) | 706359 | CC BY-SA 3.0 | 1 | 4 | 4 |
 | gundam-wiki | [1/100 Gundam F91 Model Series](https://gundam.fandom.com/wiki/1%2F100_Gundam_F91_Model_Series) | 633336 | CC BY-SA 3.0 | 2 | 9 | 9 |
 | gundam-wiki | [1/100 Silhouette Formula 91 Model Series](https://gundam.fandom.com/wiki/1%2F100_Silhouette_Formula_91_Model_Series) | 662643 | CC BY-SA 3.0 | 1 | 7 | 7 |
 | gundam-wiki | [1/144 Victory Gundam Model Series](https://gundam.fandom.com/wiki/1%2F144_Victory_Gundam_Model_Series) | 703705 | CC BY-SA 3.0 | 3 | 17 | 15 |
 | gundam-wiki | [1/144 G Gundam Model Series](https://gundam.fandom.com/wiki/1%2F144_G_Gundam_Model_Series) | 695090 | CC BY-SA 3.0 | 2 | 18 | 16 |
 | gundam-wiki | [1/144 Gundam Wing Model Series](https://gundam.fandom.com/wiki/1%2F144_Gundam_Wing_Model_Series) | 657339 | CC BY-SA 3.0 | 3 | 27 | 26 |
-| gundam-wiki | [1/144 Gundam X Model Series](https://gundam.fandom.com/wiki/1%2F144_Gundam_X_Model_Series) | 657334 | CC BY-SA 3.0 | 1 | 10 | 10 |
+| gundam-wiki | [1/144 Gundam X Model Series](https://gundam.fandom.com/wiki/1%2F144_Gundam_X_Model_Series) | 706365 | CC BY-SA 3.0 | 1 | 10 | 10 |
 | gundam-wiki | [1/144 Gundam SEED Model Series](https://gundam.fandom.com/wiki/1%2F144_Gundam_SEED_Model_Series) | 672102 | CC BY-SA 3.0 | 3 | 58 | 58 |
 | gundam-wiki | [1/100 Gundam SEED Model Series](https://gundam.fandom.com/wiki/1%2F100_Gundam_SEED_Model_Series) | 665386 | CC BY-SA 3.0 | 7 | 46 | 46 |
 | gundam-wiki | [1/100 Gundam 00 Model Series](https://gundam.fandom.com/wiki/1%2F100_Gundam_00_Model_Series) | 629590 | CC BY-SA 3.0 | 5 | 23 | 23 |
 | gundam-wiki | [1/100 IRON-BLOODED ORPHANS](https://gundam.fandom.com/wiki/1%2F100_IRON-BLOODED_ORPHANS) | 691779 | CC BY-SA 3.0 | 4 | 24 | 24 |
 | gundam-wiki | [1/60 Gundam Model Series](https://gundam.fandom.com/wiki/1%2F60_Gundam_Model_Series) | 665382 | CC BY-SA 3.0 | 13 | 32 | 27 |
-| ja-wikipedia | [マスターグレード](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111191810 | CC BY-SA 4.0 | 11 | 275 | 0 |
-| ja-wikipedia | [リアルグレード](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780725 | CC BY-SA 4.0 | 10 | 202 | 0 |
+| ja-wikipedia | [マスターグレード](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111469918 | CC BY-SA 4.0 | 11 | 275 | 0 |
+| ja-wikipedia | [リアルグレード](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111448114 | CC BY-SA 4.0 | 10 | 202 | 0 |
 | ja-wikipedia | [パーフェクトグレード](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780932 | CC BY-SA 4.0 | 1 | 22 | 0 |
 | gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1184 kit pages (938 with JAN) | 611 merged into list rows · 290 standalone · 22 ambiguous + 13 contested kept separate |
 | gundam-wiki | {{merch}} entries on the list pages above | per page | CC BY-SA 3.0 | — | 51 kit rows (46 with JAN) | 3 joined to table rows · 46 standalone · 0 ambiguous · 2 no suit |
