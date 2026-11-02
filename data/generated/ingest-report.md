@@ -1,8 +1,8 @@
 # Ingest report
 
-Generated 2026-10-26T13:19:42.873Z by `npm run ingest`. Do not edit by hand.
+Generated 2026-11-02T16:16:56.121Z by `npm run ingest`. Do not edit by hand.
 
-**1028 suits · 3415 releases** (2025 standard) · 764 with JAN · 736 with Bandai item code · 897 with materials
+**1028 suits · 3416 releases** (2025 standard) · 765 with JAN · 738 with Bandai item code · 897 with materials
 
 ## Coverage by station
 
@@ -14,7 +14,7 @@ Generated 2026-10-26T13:19:42.873Z by `npm run ingest`. Do not edit by hand.
 | UC 0087 · Gryps Conflict | 43 | 180 |
 | UC 0088 · First Neo Zeon War | 32 | 80 |
 | UC 0093 · Char's Rebellion | 18 | 146 |
-| UC 0096 · Laplace Box Recovery | 47 | 174 |
+| UC 0096 · Laplace Box Recovery | 47 | 175 |
 | UC 0097 · Phoenix Hunter | 5 | 14 |
 | UC 0105 · Mafty's Uprising | 4 | 8 |
 | UC 0111 · Formula Project | 26 | 37 |
@@ -53,7 +53,7 @@ Generated 2026-10-26T13:19:42.873Z by `npm run ingest`. Do not edit by hand.
 | Source | Page | Revision | License | Tables | Kit rows | Resolved to a suit |
 |---|---|---|---|---|---|---|
 | gundam-wiki | [Master Grade](https://gundam.fandom.com/wiki/Master_Grade) | 706131 | CC BY-SA 3.0 | 84 | 775 | 746 |
-| gundam-wiki | [Real Grade](https://gundam.fandom.com/wiki/Real_Grade) | 704346 | CC BY-SA 3.0 | 36 | 211 | 197 |
+| gundam-wiki | [Real Grade](https://gundam.fandom.com/wiki/Real_Grade) | 706793 | CC BY-SA 3.0 | 36 | 212 | 198 |
 | gundam-wiki | [Perfect Grade](https://gundam.fandom.com/wiki/Perfect_Grade) | 704347 | CC BY-SA 3.0 | 9 | 73 | 72 |
 | gundam-wiki | [Entry Grade](https://gundam.fandom.com/wiki/Entry_Grade) | 701677 | CC BY-SA 3.0 | 10 | 51 | 50 |
 | gundam-wiki | [First Grade](https://gundam.fandom.com/wiki/First_Grade) | 633347 | CC BY-SA 3.0 | 5 | 40 | 39 |
@@ -121,17 +121,17 @@ Generated 2026-10-26T13:19:42.873Z by `npm run ingest`. Do not edit by hand.
 | ja-wikipedia | [マスターグレード](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111469918 | CC BY-SA 4.0 | 11 | 275 | 0 |
 | ja-wikipedia | [リアルグレード](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111448114 | CC BY-SA 4.0 | 10 | 202 | 0 |
 | ja-wikipedia | [パーフェクトグレード](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780932 | CC BY-SA 4.0 | 1 | 22 | 0 |
-| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1184 kit pages (938 with JAN) | 611 merged into list rows · 290 standalone · 22 ambiguous + 13 contested kept separate |
+| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1185 kit pages (940 with JAN) | 611 merged into list rows · 290 standalone · 22 ambiguous + 13 contested kept separate |
 | gundam-wiki | {{merch}} entries on the list pages above | per page | CC BY-SA 3.0 | — | 51 kit rows (46 with JAN) | 3 joined to table rows · 46 standalone · 0 ambiguous · 2 no suit |
-| gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1896 Gundam products | 736 matched |
+| gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1900 Gundam products | 738 matched |
 
-## JAN by source (779 releases)
+## JAN by source (780 releases)
 
 A release carries a JAN only when every source record that speaks about it states the same code and no other record uses that code for another kit.
 
 | Stated by | Releases |
 |---|---|
-| Gunpla Wiki kit page only | 735 |
+| Gunpla Wiki kit page only | 736 |
 | both, agreeing | 29 |
 | Gundam Wiki {{merch}} entry only | 15 |
 
@@ -139,7 +139,7 @@ Key-table records by source and status:
 
 | Source | attached | standalone | ambiguous | no-suit | no-date | disputed |
 |---|---|---|---|---|---|---|
-| gunpla-wiki | 565 | 199 | 0 | 83 | 68 | 23 |
+| gunpla-wiki | 565 | 200 | 0 | 84 | 68 | 23 |
 | gundam-wiki | 2 | 42 | 0 | 0 | 0 | 2 |
 
 ## Kit-page merges settled by stronger evidence (10)
@@ -305,7 +305,7 @@ Infobox `era` not recognised. Extend `ERA_TIMELINE` in discover.ts if these matt
 - Machine Rider: no timeline (era: Not Applicable/Specified; series: —)
 - Extreme Gundam Type Leos: no timeline (era: Not Applicable/Specified; series: Mobile Suit Gundam Extreme VS)
 - EES-001 Gundam Zirius: no timeline (era: Constant Calendar; series: Mobile Suit Gundam Eight)
-- ARK-10 Gundam Helix: no timeline (era: After Apocalypse; series: Gundam Rogue Orbit)
+- ARK-10 Gundam Helix: no timeline (era: A.A.; series: Gundam Rogue Orbit)
 - XARX-0 Gundam ZERO: no timeline (era: After Apocalypse; series: Mobile Suit Gundam RG XARX-ZERO)
 
 ## Kit rows not resolved to a suit (459)
@@ -423,7 +423,7 @@ The same barcode is published for more than one kit (on Gunpla Wiki kit pages or
 - `4573102629449` High Grade the Witch from Mercury: Gundam Lfrith ↔ High Grade Gundam The Origin: RCX-76-01 Guncannon Mobility Test Type/Firepower Test Type
 - `4573102629449` High Grade Gundam The Origin: RCX-76-01 Guncannon Mobility Test Type/Firepower Test Type ↔ HGTWFM XGF-02 Gundam Lfrith; High Grade the Witch from Mercury: Gundam Lfrith
 
-## Gunpla Wiki kit pages without a resolvable suit (115)
+## Gunpla Wiki kit pages without a resolvable suit (116)
 
 First 60.
 
@@ -488,7 +488,7 @@ First 60.
 - HG Gespenst Mk-II (model of: —)
 - HG Cybuster (model of: —)
 
-## gunpla.fyi products not matched (1160)
+## gunpla.fyi products not matched (1162)
 
 First 80. Kits on pages not yet ingested, or names too different to match safely.
 
