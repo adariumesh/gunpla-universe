@@ -1,6 +1,6 @@
 # Ingest report
 
-Generated 2026-11-02T16:16:56.121Z by `npm run ingest`. Do not edit by hand.
+Generated 2026-11-09T16:39:15.282Z by `npm run ingest`. Do not edit by hand.
 
 **1028 suits · 3416 releases** (2025 standard) · 765 with JAN · 738 with Bandai item code · 897 with materials
 
@@ -60,9 +60,9 @@ Generated 2026-11-02T16:16:56.121Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [Mega Size Model](https://gundam.fandom.com/wiki/Mega_Size_Model) | 701883 | CC BY-SA 3.0 | 4 | 30 | 30 |
 | gundam-wiki | [Reborn-One Hundred](https://gundam.fandom.com/wiki/Reborn-One_Hundred) | 703703 | CC BY-SA 3.0 | 2 | 36 | 34 |
 | gundam-wiki | [Full Mechanics](https://gundam.fandom.com/wiki/Full_Mechanics) | 700563 | CC BY-SA 3.0 | 2 | 14 | 14 |
-| gundam-wiki | [Master Grade SD](https://gundam.fandom.com/wiki/Master_Grade_SD) | 706140 | CC BY-SA 3.0 | 2 | 12 | 12 |
+| gundam-wiki | [Master Grade SD](https://gundam.fandom.com/wiki/Master_Grade_SD) | 707111 | CC BY-SA 3.0 | 2 | 12 | 12 |
 | gundam-wiki | [High Grade Universal Century](https://gundam.fandom.com/wiki/High_Grade_Universal_Century) | 706426 | CC BY-SA 3.0 | 19 | 209 | 198 |
-| gundam-wiki | [High Grade (1990)](https://gundam.fandom.com/wiki/High_Grade_(1990)) | 662877 | CC BY-SA 3.0 | 4 | 7 | 7 |
+| gundam-wiki | [High Grade (1990)](https://gundam.fandom.com/wiki/High_Grade_(1990)) | 707554 | CC BY-SA 3.0 | 4 | 7 | 7 |
 | gundam-wiki | [High Grade-EX](https://gundam.fandom.com/wiki/High_Grade-EX) | 631547 | CC BY-SA 3.0 | 2 | 3 | 3 |
 | gundam-wiki | [High Grade After Colony](https://gundam.fandom.com/wiki/High_Grade_After_Colony) | 620084 | CC BY-SA 3.0 | 2 | 31 | 31 |
 | gundam-wiki | [High Grade After War](https://gundam.fandom.com/wiki/High_Grade_After_War) | 691784 | CC BY-SA 3.0 | 2 | 9 | 9 |
@@ -76,9 +76,9 @@ Generated 2026-11-02T16:16:56.121Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [High Grade Gundam The Origin](https://gundam.fandom.com/wiki/High_Grade_Gundam_The_Origin) | 668769 | CC BY-SA 3.0 | 13 | 77 | 72 |
 | gundam-wiki | [High Grade Gundam Thunderbolt](https://gundam.fandom.com/wiki/High_Grade_Gundam_Thunderbolt) | 706444 | CC BY-SA 3.0 | 4 | 22 | 21 |
 | gundam-wiki | [High Grade Mobile Suit Gundam: The 08th MS Team](https://gundam.fandom.com/wiki/High_Grade_Mobile_Suit_Gundam%3A_The_08th_MS_Team) | 662151 | CC BY-SA 3.0 | 3 | 11 | 7 |
-| gundam-wiki | [High Grade Mobile Suit Gundam: Cucuruz Doan's Island](https://gundam.fandom.com/wiki/High_Grade_Mobile_Suit_Gundam%3A_Cucuruz_Doan's_Island) | 665930 | CC BY-SA 3.0 | 3 | 11 | 11 |
+| gundam-wiki | [High Grade Mobile Suit Gundam: Cucuruz Doan's Island](https://gundam.fandom.com/wiki/High_Grade_Mobile_Suit_Gundam%3A_Cucuruz_Doan's_Island) | 707589 | CC BY-SA 3.0 | 3 | 11 | 11 |
 | gundam-wiki | [High Grade Mobile Suit Gundam GQuuuuuuX](https://gundam.fandom.com/wiki/High_Grade_Mobile_Suit_Gundam_GQuuuuuuX) | 695179 | CC BY-SA 3.0 | 2 | 19 | 19 |
-| gundam-wiki | [High Grade Gundam Wing Dual Story G-Unit](https://gundam.fandom.com/wiki/High_Grade_Gundam_Wing_Dual_Story_G-Unit) | 682859 | CC BY-SA 3.0 | 1 | 5 | 5 |
+| gundam-wiki | [High Grade Gundam Wing Dual Story G-Unit](https://gundam.fandom.com/wiki/High_Grade_Gundam_Wing_Dual_Story_G-Unit) | 707557 | CC BY-SA 3.0 | 1 | 5 | 5 |
 | gundam-wiki | [High Grade Beyond Global](https://gundam.fandom.com/wiki/High_Grade_Beyond_Global) | 664044 | CC BY-SA 3.0 | 1 | 9 | 9 |
 | gundam-wiki | [High Grade G40](https://gundam.fandom.com/wiki/High_Grade_G40) | 582744 | CC BY-SA 3.0 | 1 | 2 | 2 |
 | gundam-wiki | [High Grade Ver.G30th](https://gundam.fandom.com/wiki/High_Grade_Ver.G30th) | 663962 | CC BY-SA 3.0 | 2 | 19 | 18 |
@@ -123,7 +123,7 @@ Generated 2026-11-02T16:16:56.121Z by `npm run ingest`. Do not edit by hand.
 | ja-wikipedia | [パーフェクトグレード](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780932 | CC BY-SA 4.0 | 1 | 22 | 0 |
 | gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1185 kit pages (940 with JAN) | 611 merged into list rows · 290 standalone · 22 ambiguous + 13 contested kept separate |
 | gundam-wiki | {{merch}} entries on the list pages above | per page | CC BY-SA 3.0 | — | 51 kit rows (46 with JAN) | 3 joined to table rows · 46 standalone · 0 ambiguous · 2 no suit |
-| gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1900 Gundam products | 738 matched |
+| gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1901 Gundam products | 738 matched |
 
 ## JAN by source (780 releases)
 
@@ -488,7 +488,7 @@ First 60.
 - HG Gespenst Mk-II (model of: —)
 - HG Cybuster (model of: —)
 
-## gunpla.fyi products not matched (1162)
+## gunpla.fyi products not matched (1163)
 
 First 80. Kits on pages not yet ingested, or names too different to match safely.
 
