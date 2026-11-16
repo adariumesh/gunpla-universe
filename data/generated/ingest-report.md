@@ -1,8 +1,8 @@
 # Ingest report
 
-Generated 2026-11-09T16:39:15.282Z by `npm run ingest`. Do not edit by hand.
+Generated 2026-11-16T16:05:16.770Z by `npm run ingest`. Do not edit by hand.
 
-**1028 suits · 3416 releases** (2025 standard) · 765 with JAN · 738 with Bandai item code · 897 with materials
+**1028 suits · 3416 releases** (2025 standard) · 766 with JAN · 738 with Bandai item code · 898 with materials
 
 ## Coverage by station
 
@@ -61,7 +61,7 @@ Generated 2026-11-09T16:39:15.282Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [Reborn-One Hundred](https://gundam.fandom.com/wiki/Reborn-One_Hundred) | 703703 | CC BY-SA 3.0 | 2 | 36 | 34 |
 | gundam-wiki | [Full Mechanics](https://gundam.fandom.com/wiki/Full_Mechanics) | 700563 | CC BY-SA 3.0 | 2 | 14 | 14 |
 | gundam-wiki | [Master Grade SD](https://gundam.fandom.com/wiki/Master_Grade_SD) | 707111 | CC BY-SA 3.0 | 2 | 12 | 12 |
-| gundam-wiki | [High Grade Universal Century](https://gundam.fandom.com/wiki/High_Grade_Universal_Century) | 706426 | CC BY-SA 3.0 | 19 | 209 | 198 |
+| gundam-wiki | [High Grade Universal Century](https://gundam.fandom.com/wiki/High_Grade_Universal_Century) | 708063 | CC BY-SA 3.0 | 19 | 209 | 198 |
 | gundam-wiki | [High Grade (1990)](https://gundam.fandom.com/wiki/High_Grade_(1990)) | 707554 | CC BY-SA 3.0 | 4 | 7 | 7 |
 | gundam-wiki | [High Grade-EX](https://gundam.fandom.com/wiki/High_Grade-EX) | 631547 | CC BY-SA 3.0 | 2 | 3 | 3 |
 | gundam-wiki | [High Grade After Colony](https://gundam.fandom.com/wiki/High_Grade_After_Colony) | 620084 | CC BY-SA 3.0 | 2 | 31 | 31 |
@@ -118,20 +118,20 @@ Generated 2026-11-09T16:39:15.282Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [1/100 Gundam 00 Model Series](https://gundam.fandom.com/wiki/1%2F100_Gundam_00_Model_Series) | 629590 | CC BY-SA 3.0 | 5 | 23 | 23 |
 | gundam-wiki | [1/100 IRON-BLOODED ORPHANS](https://gundam.fandom.com/wiki/1%2F100_IRON-BLOODED_ORPHANS) | 691779 | CC BY-SA 3.0 | 4 | 24 | 24 |
 | gundam-wiki | [1/60 Gundam Model Series](https://gundam.fandom.com/wiki/1%2F60_Gundam_Model_Series) | 665382 | CC BY-SA 3.0 | 13 | 32 | 27 |
-| ja-wikipedia | [マスターグレード](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111469918 | CC BY-SA 4.0 | 11 | 275 | 0 |
+| ja-wikipedia | [マスターグレード](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111770698 | CC BY-SA 4.0 | 11 | 275 | 0 |
 | ja-wikipedia | [リアルグレード](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111448114 | CC BY-SA 4.0 | 10 | 202 | 0 |
 | ja-wikipedia | [パーフェクトグレード](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780932 | CC BY-SA 4.0 | 1 | 22 | 0 |
-| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1185 kit pages (940 with JAN) | 611 merged into list rows · 290 standalone · 22 ambiguous + 13 contested kept separate |
+| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1186 kit pages (941 with JAN) | 612 merged into list rows · 290 standalone · 22 ambiguous + 13 contested kept separate |
 | gundam-wiki | {{merch}} entries on the list pages above | per page | CC BY-SA 3.0 | — | 51 kit rows (46 with JAN) | 3 joined to table rows · 46 standalone · 0 ambiguous · 2 no suit |
 | gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1901 Gundam products | 738 matched |
 
-## JAN by source (780 releases)
+## JAN by source (781 releases)
 
 A release carries a JAN only when every source record that speaks about it states the same code and no other record uses that code for another kit.
 
 | Stated by | Releases |
 |---|---|
-| Gunpla Wiki kit page only | 736 |
+| Gunpla Wiki kit page only | 737 |
 | both, agreeing | 29 |
 | Gundam Wiki {{merch}} entry only | 15 |
 
@@ -139,7 +139,7 @@ Key-table records by source and status:
 
 | Source | attached | standalone | ambiguous | no-suit | no-date | disputed |
 |---|---|---|---|---|---|---|
-| gunpla-wiki | 565 | 200 | 0 | 84 | 68 | 23 |
+| gunpla-wiki | 566 | 200 | 0 | 84 | 68 | 23 |
 | gundam-wiki | 2 | 42 | 0 | 0 | 0 | 2 |
 
 ## Kit-page merges settled by stronger evidence (10)
