@@ -1,8 +1,8 @@
 # Ingest report
 
-Generated 2026-11-16T16:05:16.770Z by `npm run ingest`. Do not edit by hand.
+Generated 2026-11-23T18:29:46.561Z by `npm run ingest`. Do not edit by hand.
 
-**1028 suits · 3416 releases** (2025 standard) · 766 with JAN · 738 with Bandai item code · 898 with materials
+**1029 suits · 3418 releases** (2027 standard) · 766 with JAN · 738 with Bandai item code · 900 with materials
 
 ## Coverage by station
 
@@ -24,7 +24,7 @@ Generated 2026-11-16T16:05:16.770Z by `npm run ingest`. Do not edit by hand.
 | UC 0223 · CONSENT Assault on Gaia | 1 | 1 |
 | RC 1014 · Attack on Capital Tower | 21 | 27 |
 | FC 60 · 13th Gundam Fight | 11 | 64 |
-| AC 195 · Operation Meteor | 15 | 90 |
+| AC 195 · Operation Meteor | 16 | 92 |
 | AC 196 · True Operation Meteor | 25 | 100 |
 | AW 15 · 8th Space War | 12 | 40 |
 | AG 115 · UE Attack | 19 | 44 |
@@ -58,10 +58,10 @@ Generated 2026-11-16T16:05:16.770Z by `npm run ingest`. Do not edit by hand.
 | gundam-wiki | [Entry Grade](https://gundam.fandom.com/wiki/Entry_Grade) | 701677 | CC BY-SA 3.0 | 10 | 51 | 50 |
 | gundam-wiki | [First Grade](https://gundam.fandom.com/wiki/First_Grade) | 633347 | CC BY-SA 3.0 | 5 | 40 | 39 |
 | gundam-wiki | [Mega Size Model](https://gundam.fandom.com/wiki/Mega_Size_Model) | 701883 | CC BY-SA 3.0 | 4 | 30 | 30 |
-| gundam-wiki | [Reborn-One Hundred](https://gundam.fandom.com/wiki/Reborn-One_Hundred) | 703703 | CC BY-SA 3.0 | 2 | 36 | 34 |
+| gundam-wiki | [Reborn-One Hundred](https://gundam.fandom.com/wiki/Reborn-One_Hundred) | 708766 | CC BY-SA 3.0 | 2 | 36 | 34 |
 | gundam-wiki | [Full Mechanics](https://gundam.fandom.com/wiki/Full_Mechanics) | 700563 | CC BY-SA 3.0 | 2 | 14 | 14 |
 | gundam-wiki | [Master Grade SD](https://gundam.fandom.com/wiki/Master_Grade_SD) | 707111 | CC BY-SA 3.0 | 2 | 12 | 12 |
-| gundam-wiki | [High Grade Universal Century](https://gundam.fandom.com/wiki/High_Grade_Universal_Century) | 708063 | CC BY-SA 3.0 | 19 | 209 | 198 |
+| gundam-wiki | [High Grade Universal Century](https://gundam.fandom.com/wiki/High_Grade_Universal_Century) | 708398 | CC BY-SA 3.0 | 19 | 209 | 198 |
 | gundam-wiki | [High Grade (1990)](https://gundam.fandom.com/wiki/High_Grade_(1990)) | 707554 | CC BY-SA 3.0 | 4 | 7 | 7 |
 | gundam-wiki | [High Grade-EX](https://gundam.fandom.com/wiki/High_Grade-EX) | 631547 | CC BY-SA 3.0 | 2 | 3 | 3 |
 | gundam-wiki | [High Grade After Colony](https://gundam.fandom.com/wiki/High_Grade_After_Colony) | 620084 | CC BY-SA 3.0 | 2 | 31 | 31 |
@@ -121,7 +121,7 @@ Generated 2026-11-16T16:05:16.770Z by `npm run ingest`. Do not edit by hand.
 | ja-wikipedia | [マスターグレード](https://ja.wikipedia.org/wiki/%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111770698 | CC BY-SA 4.0 | 11 | 275 | 0 |
 | ja-wikipedia | [リアルグレード](https://ja.wikipedia.org/wiki/%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 111448114 | CC BY-SA 4.0 | 10 | 202 | 0 |
 | ja-wikipedia | [パーフェクトグレード](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%95%E3%82%A7%E3%82%AF%E3%83%88%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89) | 110780932 | CC BY-SA 4.0 | 1 | 22 | 0 |
-| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1186 kit pages (941 with JAN) | 612 merged into list rows · 290 standalone · 22 ambiguous + 13 contested kept separate |
+| gunpla-wiki | [Gunpla Wiki](https://gunpla.fandom.com) kit pages | per page | CC BY-SA | — | 1186 kit pages (941 with JAN) | 612 merged into list rows · 292 standalone · 22 ambiguous + 13 contested kept separate |
 | gundam-wiki | {{merch}} entries on the list pages above | per page | CC BY-SA 3.0 | — | 51 kit rows (46 with JAN) | 3 joined to table rows · 46 standalone · 0 ambiguous · 2 no suit |
 | gunpla-fyi | [gunpla.fyi](https://gunpla.fyi) product index | — | factual data | — | 1901 Gundam products | 738 matched |
 
@@ -200,7 +200,7 @@ Each suit sits at the station of the series most of its kits come from (`data/se
 | Method | Suits |
 |---|---|
 | series | 942 |
-| debut year | 75 |
+| debut year | 76 |
 | parent (variant) | 0 |
 | undated (no evidence) | 11 |
 
@@ -295,8 +295,9 @@ Placed by debut year only (no mapped series among their kits):
 - RX-78(G)E Gundam EX → UC 0079 (debut November 7, 0079)
 - MS-06F Zaku II F Type → UC 0079 (debut 0079)
 - MSN-03-2 Psycho Doga → UC 0093 (debut 0093)
+- ARK-10 Gundam Helix → AC 195 (debut 135)
 
-## Suit pages without a timeline (7)
+## Suit pages without a timeline (6)
 
 Infobox `era` not recognised. Extend `ERA_TIMELINE` in discover.ts if these matter.
 
@@ -305,7 +306,6 @@ Infobox `era` not recognised. Extend `ERA_TIMELINE` in discover.ts if these matt
 - Machine Rider: no timeline (era: Not Applicable/Specified; series: —)
 - Extreme Gundam Type Leos: no timeline (era: Not Applicable/Specified; series: Mobile Suit Gundam Extreme VS)
 - EES-001 Gundam Zirius: no timeline (era: Constant Calendar; series: Mobile Suit Gundam Eight)
-- ARK-10 Gundam Helix: no timeline (era: A.A.; series: Gundam Rogue Orbit)
 - XARX-0 Gundam ZERO: no timeline (era: After Apocalypse; series: Mobile Suit Gundam RG XARX-ZERO)
 
 ## Kit rows not resolved to a suit (459)
@@ -423,7 +423,7 @@ The same barcode is published for more than one kit (on Gunpla Wiki kit pages or
 - `4573102629449` High Grade the Witch from Mercury: Gundam Lfrith ↔ High Grade Gundam The Origin: RCX-76-01 Guncannon Mobility Test Type/Firepower Test Type
 - `4573102629449` High Grade Gundam The Origin: RCX-76-01 Guncannon Mobility Test Type/Firepower Test Type ↔ HGTWFM XGF-02 Gundam Lfrith; High Grade the Witch from Mercury: Gundam Lfrith
 
-## Gunpla Wiki kit pages without a resolvable suit (116)
+## Gunpla Wiki kit pages without a resolvable suit (114)
 
 First 60.
 
